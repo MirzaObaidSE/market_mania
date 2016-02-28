@@ -34,5 +34,15 @@ return [
         'key'    => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+     'twitter' => [
+        'client_id' => 'NYpbHzhdUUQGERNE1AiOUy1vS',
+        'client_secret' => 'il0grNd5ZxsI7GoaQ10MVvQPyjv7NKLx5cneSj0djcyX1Ci4bG',
+        'redirect' => 'http://localhost:8000/callback',
+    ],
+     'facebook' => [
+        'client_id' => '1281919928501395',
+        'client_secret' => 'bee874df0f6c1ce3767c0b2cf2866cc3',
+        'redirect' => 'http://localhost:8000/callback',
+    ],
 
 ];
