@@ -17,8 +17,8 @@ Route::get('/', function () {
 Route::get('signin','AuthController@redirectToProvider');
 Route::get('callback','AuthController@handleProviderCallback');
 Route::get('logout','AuthController@logout');
-Route::get('/facebook','FacebookController@facebook');
-Route::get('/callback','FacebookController@callback');
+Route::get('facebook','FacebookController@facebook');
+Route::get('callback_facebook','FacebookController@callback');
 
 Route::get('get_twitter_users',[
     'as' => 'get_twitter_users',
