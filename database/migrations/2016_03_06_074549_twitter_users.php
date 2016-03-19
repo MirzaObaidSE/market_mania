@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class TwitterUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('Tusers', function (Blueprint $table) {
+        Schema::create('twitter_users', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
             $table->string('name');
@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('location');
             $table->timestamps();           
             });
-        }
+    }
 
     /**
      * Reverse the migrations.
@@ -29,6 +29,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('Tusers');
+        Schema::drop('twitter_users');
     }
 }

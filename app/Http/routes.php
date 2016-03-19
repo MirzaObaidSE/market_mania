@@ -24,3 +24,8 @@ Route::get('get_twitter_users',[
     'as' => 'get_twitter_users',
     'uses' => 'SocialController@getTwitter'
 ]);
+Route::get('get_facebook_users',[
+    'as' => 'get_facebook_users',
+    'uses' => 'Facebook_User@getFacebook'
+]);
+

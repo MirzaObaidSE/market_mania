@@ -28,8 +28,9 @@ class AuthController extends Controller
     public function handleProviderCallback()
         {
             $user = Socialite::driver('twitter')->user();
-            
-            var_dump($user);
+            $name=$user->followers_count;
+            echo $name;
+          // var_dump($user);
 
         // $user->token;
         }
