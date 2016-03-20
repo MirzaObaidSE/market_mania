@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\Facebook_User;
+//use App\Http\Controllers\Facebook_User;
 use SammyK\LaravelFacebookSdk\LaravelFacebookSdk;
 class Facebook_User extends Controller
 {
@@ -17,13 +17,14 @@ class Facebook_User extends Controller
         try {
             
               
-            $response = $fb->Get('https://graph.facebook.com/v2.5/search?q=john&type=user&formate=json','CAASN5j34BJMBAOPaT9Od5KBmyX2sYaJ6hvgRRtrrkb6ZAmJvjvdUlTgG6abSNzYm8vLlgIpWNj6ftg2M0bzu9hFYVD5HAUM1zZAa5QeBZBwbsfVewaESS7k7tkHEAZB7AmcM5s5je3Lea7GNHug3mbSQZAkVAHVg1QgN76PMZALTnZBihj8ZBxC3vxmMze0s23tOnclnCwsYBg9Y236qMKLU');
+            $response = $fb->Get('/search?q=Obiad&type=user&formate=json','CAASN5j34BJMBAHqj6ZBoSM3QPhTWQ287pHE0s0UEe7pXcZCBdhIGTrQmL07jZAYSO8SzsQl7p3mZAmZAAhB7efWFYkWTpflGwAgrq1Pnani20ne15vGYoTVZA8C2HTKrRQ1GL5HrUDvl3YwK1fD8a8wt6aZCq16BTo28N2yR2pYdGmoJXI2AbKYbOhq1ZCX695S5OWIdIgJvqQZDZD');
             
         } 
         catch(\Facebook\Exceptions\FacebookSDKException $e) {
             dd($e->getMessage());
         }
-        echo '<pre>';print_r($response);die;
+          $data = json_decode($response->getBody(), true);
+        echo '<pre>';print_r($data);die;
        // var_dump($response);die();
         //$graphObject = $request->getGraphObject();
         //var_dump($graphObject);die();
