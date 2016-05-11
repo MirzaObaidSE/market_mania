@@ -2,7 +2,7 @@
 /**
  * @file SocialController.php file to handle social third party apps related operations
  * @package: Controllers
- * @author: Awais Qarni
+ * @author: Mirza Obaid
  */
 namespace App\Http\Controllers;
 

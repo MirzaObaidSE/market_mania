@@ -136,7 +136,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        
+      
 
         /*
          * Application Service Providers...
@@ -147,7 +147,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         SammyK\LaravelFacebookSdk\LaravelFacebookSdkServiceProvider::class,
-        
+        Vinkla\Instagram\InstagramServiceProvider::class,
+        Illuminate\Html\HtmlServiceProvider::class,
     ],
 
     /*
@@ -198,8 +199,9 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Facebook' => SammyK\LaravelFacebookSdk\FacebookFacade::class,
-        
-        
+        'Instagram' => Vinkla\Instagram\Facades\Instagram::class,
+        'Form'=> Illuminate\Html\FormFacade::class,
+        'Html'=> Illuminate\Html\HtmlFacade::class,
 
 
     ],

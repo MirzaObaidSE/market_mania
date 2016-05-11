@@ -12,15 +12,13 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('Tusers', function (Blueprint $table) {
+         Schema::create('facebook_users', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
+            $table->string('user_id');
             $table->string('name');
-            $table->string('sname');
-            $table->string('location');
-            $table->timestamps();           
-            });
-        }
+            $table->timestamps();
+        });
+    }
 
     /**
      * Reverse the migrations.
@@ -29,6 +27,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('Tusers');
+        //
     }
 }

@@ -28,7 +28,7 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = ['name', 'email', 'password','phone_no','website'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -36,4 +36,17 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    public function scopeSearchByKeyword($query, $keyword)
+    {
+        $query->where('type','user');
+        if ($keyword!='') {
+            $query->where(function ($query) use ($keyword) {
+                $query->where("name", "LIKE","%$keyword%")
+                    ->orWhere("email", "LIKE", "%$keyword%")
+                    ->orWhere("phone_no", "LIKE", "%$keyword%");     
+            });
+        }
+        return $query;
+    }
 }

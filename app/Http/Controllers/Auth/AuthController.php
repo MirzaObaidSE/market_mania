@@ -7,6 +7,7 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
@@ -22,6 +23,13 @@ class AuthController extends Controller
     */
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+
+    /**
+     * Where to redirect users after login / registration.
+     *
+     * @var string
+     */
+    protected $redirectTo = '/home';
 
     /**
      * Create a new authentication controller instance.
@@ -47,6 +55,7 @@ class AuthController extends Controller
             'password' => 'required|confirmed|min:6',
         ]);
     }
+   
 
     /**
      * Create a new user instance after a valid registration.
@@ -60,6 +69,29 @@ class AuthController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'phone_no' => $data['phone_no'],
+            'website' => $data['website'],
         ]);
     }
+   
+
+    /*public function postRegister(Request $request) {
+
+        $validator = $this->validator($request->all());
+        if ($validator->fails()) {
+            echo "<pre>";print_r($request->all());var_dump($validator);
+            die("vadlidation failed");
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+
+        //create user
+        $newuser = $this->create($request->all());
+        //make login request
+        \Auth::guard($this->getGuard())->login($newuser);
+        return redirect($this->redirectPath());
+
+        
+    }*/
 }
