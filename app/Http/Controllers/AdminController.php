@@ -23,7 +23,7 @@ class AdminController extends Controller
     public function getuserlist()
     {
         
-        $keyword = Input::get('keyword', '');
+        $keyword = Input::get('search','');
         $alluser = User::SearchByKeyword($keyword)->get();
         return View::make('admin.userlist' , compact('alluser'));
 

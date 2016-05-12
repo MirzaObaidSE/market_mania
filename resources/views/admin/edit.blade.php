@@ -62,7 +62,7 @@
                                             </div>
                                             <div class="row collapse">
                                                 
-                                            <button class="bg-green small-12  columns" type="submit"><span> Register </span></button>
+                                            <button class="bg-green small-12  columns" type="submit"><span> Update User </span></button>
                                              
                                             </div>
 

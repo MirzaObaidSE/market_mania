@@ -69,23 +69,23 @@
 
                                 </li>
                                 <li>
-                                    <a class="tooltip-tip" href="">               
-                                        <span>User </span>
+                                    <a class="tooltip-tip" href="{{ action("UserController@showprofile") }}">               
+                                        <span>Profile </span>
 
                                     </a>
                                     
                                 </li>
                                  <li>
-                                    <a class="tooltip-tip" href="">               
-                                        <span>Create User</span>
+                                    <a class="tooltip-tip" href="{{ action("UserController@search") }}">               
+                                        <span>Search User</span>
 
                                     </a>
                                     
                                 </li>
-                                <li>
+                               <!--- <li>
                                     <a class="tooltip-tip" href="#">
                                         <i class=" icon-window"></i>
-                                        <span>Layout<small class="side-menu-noft">New</small></span>
+                                      <span>Layout<small class="side-menu-noft">New</small></span>
 
                                     </a>
                                     <ul>
@@ -97,7 +97,7 @@
                                         </li>
                         
                                     </ul>
-                                </li>
+                                </li>-->
 
                                 <li>
                                     <a class="tooltip-tip" href="#" title="Mail">
@@ -121,7 +121,7 @@
                                     </ul>
                                 </li>
 
-                                <li>
+                              <!--  <li>
                                     <a class="tooltip-tip" href="#" title="Mail">
                                         <i class=" icon-mail"></i>
                                         <span>mail</span>
@@ -250,7 +250,7 @@
                                         <span>Icons</span>
 
                                     </a>
-                                </li>
+                                </li>-->
 
                                 <li>
                                     <a class="tooltip-tip" href="#" title="Extra">
@@ -315,7 +315,7 @@
 
                         <section class="top-bar-section ">
                             <!-- Right Nav Section -->
-                            <ul class="left">
+                            <!--<ul class="left">
                                 <li class="has-dropdown bg-white">
                                     <a class="bg-white" href="#"><i class="text-green fa fa-envelope"></i>&nbsp;<span class="label edumix-msg-noft">84</span></a>
                                     <ul class="dropdown dropdown-nest">

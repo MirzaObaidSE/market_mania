@@ -118,4 +118,20 @@ Route::group(['middleware' => ['auth', 'customer'], 'prefix' => 'customer'], fun
         'as' => 'user_profile',
         'uses' => 'UserController@showprofile'
     ]);
+     Route::get('editbyuser/{id}',[
+        'as'=> 'edit_by_user',
+        'uses' => 'UserController@edit'
+    ]);
+     Route::post('updatebyuser/{id}',[
+        'as'=> 'update_by_user',
+        'uses' => 'UserController@update'
+    ]);
+     Route::get('usersearch',[
+        'as'=> 'user_search',
+        'uses' => 'UserController@search'
+    ]);
+     Route::post('searchquery',[
+        'as'=> 'search_query',
+        'uses' => 'UserController@query'
+    ]);
 });

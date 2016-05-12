@@ -74,24 +74,11 @@ class AuthController extends Controller
         ]);
     }
    
-
-    /*public function postRegister(Request $request) {
-
-        $validator = $this->validator($request->all());
-        if ($validator->fails()) {
-            echo "<pre>";print_r($request->all());var_dump($validator);
-            die("vadlidation failed");
-            $this->throwValidationException(
-                $request, $validator
-            );
-        }
-
-        //create user
-        $newuser = $this->create($request->all());
-        //make login request
-        \Auth::guard($this->getGuard())->login($newuser);
-        return redirect($this->redirectPath());
+    public function getLogout(){
+        return View('auth.login');
+    }
+ 
 
         
-    }*/
+   
 }

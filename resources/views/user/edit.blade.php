@@ -1,7 +1,5 @@
-@extends('layouts.master')
+@extends('layouts.user_master')
 @section('content')
-
-
 
      <div class="box-body " style="display: block;">
                         <div class="row">
@@ -10,7 +8,7 @@
                                 <div class="row">
                                     <div class="edumix-signup-panel">
                                         <p class="welcome"> Welcome to this awesome app!</p>
-                                      {!! Form::open(array('route' => 'createuser')) !!}
+                                      {!! Form::model($user, array('route' => array('update_by_user', $user->id))) !!}
                                             {!! csrf_field() !!}
                                             <div class="row collapse">
                                                 <div class="small-5  columns">
@@ -33,7 +31,7 @@
                                                     <span class="prefix bg-green">Enter Password</span>
                                                 </div>
                                                 <div class="small-7 columns ">
-                                                    {!! Form::password('password',null,array()) !!}
+                                                 {!! Form::password('password',null,array()) !!}
                                                 </div>
                                             </div>
                                             <div class="row collapse">
@@ -41,7 +39,7 @@
                                                     <span class="prefix bg-green">Confirm Password</span>
                                                 </div>
                                                 <div class="small-7 columns ">
-                                                   {!! Form::password('password',null,array()) !!}
+                                                     {!! Form::password('password',null,array()) !!}
                                                 </div>
                                             </div>
                                             <div class="row collapse">
@@ -49,7 +47,7 @@
                                                     <span class="prefix bg-green">Phone No</span>
                                                 </div>
                                                 <div class="small-7  columns">
-                                                    {!! Form::text('phone_no',null,array()) !!}
+                                                       {!! Form::text('phone_no',null,array()) !!}
                                                 </div>
                                             </div>
                                              <div class="row collapse">
@@ -57,12 +55,12 @@
                                                     <span class="prefix bg-green">Website</span>
                                                 </div>
                                                 <div class="small-7  columns">
-                                                     {!! Form::text('website',null,array()) !!}
+                                                      {!! Form::text('website',null,array()) !!}
                                                 </div>
                                             </div>
                                             <div class="row collapse">
                                                 
-                                            <button class="bg-green small-12  columns" type="submit"><span> Add User </span></button>
+                                            <button class="bg-green small-12  columns" type="submit"><span> Update Info </span></button>
                                              
                                             </div>
 
