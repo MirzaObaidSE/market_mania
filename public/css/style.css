@@ -849,3 +849,26 @@ ALERT
     background: #fac0c2;
     border: solid 1px #ef3236;
 }
+.user-info-wrapper {
+    border-bottom: 1px solid;
+    padding-bottom: 15px;
+    padding-top: 10px;
+}
+.user-info-wrapper .image {
+    float: left;
+    height: 100px;
+    width: 100px;
+}
+.user-info-wrapper .name {
+    color: #000000;
+    float: left;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-left: 40px;
+}
+.user-info-wrapper .add-button {
+    float: right;
+}
+.clr {
+    clear: both;
+}

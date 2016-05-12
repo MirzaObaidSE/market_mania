@@ -514,7 +514,7 @@
 
 
                 <footer>
-                    <div id="footer">Copyright &copy; 2015 <a href="http://themeforest.net/user/matirasa">Matirasa</a> Made with <i class="fontello-heart-1 text-green"></i></div>
+                    <div id="footer">Copyright &copy; 2016 <a href="">Market Mania</a> Made with <i class="fontello-heart-1 text-green"></i></div>
 
                 </footer>
             </div>
@@ -528,9 +528,9 @@
 
 
 
-            <!-- Right Menu -->
+            <!-- Right Menu--?
             <aside class="right-off-canvas-menu">
-                <!-- whatever you want goes here -->
+                <!-- whatever you want goes here 
                 <ul class="off-canvas-list">
                     <li>
                         <label class="bg-transparent" style="padding:25px 20px"><span class="label round bg-green">online</span><i class=" icon-gear right"></i>

@@ -121,7 +121,7 @@
                                     </ul>
                                 </li>
 
-                                <li>
+                              <!--  <li>
                                     <a class="tooltip-tip" href="#" title="Mail">
                                         <i class=" icon-mail"></i>
                                         <span>mail</span>
@@ -250,7 +250,7 @@
                                         <span>Icons</span>
 
                                     </a>
-                                </li>
+                                </li>-->
 
                                 <li>
                                     <a class="tooltip-tip" href="#" title="Extra">
@@ -264,15 +264,11 @@
                                         <li>
                                             <a href="pricing_table.html" title="Pricing Table">Pricing Table</a>
                                         </li>
-                                        <li>
-                                            <a href="time-line.html" title="Time Line">Time Line</a>
-                                        </li>
+                                        
                                         <li>
                                             <a href="login.html" title="Chart">Login</a>
                                         </li>
-                                        <li>
-                                            <a href="map.html" title="Lock Screen">Map</a>
-                                        </li>
+                                        
                                         <li>
                                             <a href="404.html" title="404 Error Page">404 Error Page</a>
                                         </li>
@@ -314,7 +310,7 @@
                         </ul>
 
                         <section class="top-bar-section ">
-                            <!-- Right Nav Section -->
+                            <!-- Right Nav Section 
                             <ul class="left">
                                 <li class="has-dropdown bg-white">
                                     <a class="bg-white" href="#"><i class="text-green fa fa-envelope"></i>&nbsp;<span class="label edumix-msg-noft">84</span></a>
@@ -435,7 +431,7 @@
                                     </ul>
                                 </li>
                             </ul>
-                            <!-- Left Nav Section -->
+                            <!Left Nav Section -->
                             <ul class="left">
 
                                 <!-- Search | has-form wrapper -->

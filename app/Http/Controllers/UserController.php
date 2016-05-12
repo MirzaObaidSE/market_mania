@@ -51,12 +51,13 @@ class UserController extends Controller
     }
     public function query(Request $request){
 
+
         $name = Input::get('name');
         $network= Input::get('network');
         
         $obj=new Integration();
         $result=$obj->handle_integration($name,$network);
-        echo "<pre>"; print_r($result); die();
+           return View('user.usersearch',compact('result'));
     }
 
     /**
@@ -119,7 +120,16 @@ class UserController extends Controller
     }
     public function search()
     {
-        return View('user.usersearch');
+        $name = Input::get('name','');
+        $network= Input::get('network','');
+        $result = array();
+        if(!empty($name) && !empty($network)) {
+            $obj=new Integration();
+            $result=$obj->handle_integration($name,$network);    
+        }
+        
+        return View('user.usersearch',compact('result','network'));
+        
     }
 
     /**

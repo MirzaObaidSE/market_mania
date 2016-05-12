@@ -48,8 +48,9 @@ class SocialController extends Controller
                 ->buildOauth($url, $requestMethod)
                 ->performRequest();
 
+        //echo '<pre>';print_r($users);die;
         $users = json_decode($users,true);
-        //var_dump($users);die();
+        var_dump($users);die();
         if(empty($users)){
         
                         

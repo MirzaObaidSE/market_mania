@@ -74,9 +74,9 @@ class AuthController extends Controller
         ]);
     }
    
-    public function getLogout(){
+    /*public function getLogout(){
         return View('auth.login');
-    }
+    }*/
  
 
         

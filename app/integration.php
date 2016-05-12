@@ -32,24 +32,43 @@ class Integration{
         $url = 'https://api.twitter.com/1.1/users/search.json';
         $getfield = '?q="'.$name.'"';
         $requestMethod = 'GET';
+        $result = array();
         $twitter = new TwitterAPIExchange($settings);
         $users =  $twitter->setGetfield($getfield)
                 ->buildOauth($url, $requestMethod)
                 ->performRequest();
-                return $users;
+        $users = json_decode($users,true);
+        foreach($users as $key=>$value) {
+          
+            $result[] = array(
+                'id' => $value['id'],
+                'name' => $value['name'],
+                'screen_name'=>$value['screen_name'],
+                'location' => $value['location'],
+                'image' => $value['profile_image_url']
+                );
+        }
+                return $result;
     }
     //end twitter function
     //start Facebook 
     Public function getFacebookUser($name){           
     	$fb = app(\SammyK\LaravelFacebookSdk\LaravelFacebookSdk::class);
         try {   
-            $response = $fb->Get('/search?q="'.$name.'"&type=user&limit=30','EAASN5j34BJMBAH9nZCTEEHzuzMqca1GwlbO2v5ZApl2wgZA77lN0XFzogEf7ZCtPWaevGoHnYA83W9BVezVnZBt4784nNces2WMySkICP6eZAkqFZBqI28DnRmWZA5ZBvZBPEXA3EbNdApysHJIx0Fh5qZA92TfhVRiYLoHt9YXTKu5IAZDZD');           
+            $response = $fb->Get('/search?q="'.$name.'"&type=user&limit=30','EAASN5j34BJMBAKYt6xQJwuooi0MQr6RS9LFOKlhBi2yGVcx9xmiIuF6IZBVMbm2nXKKC0t5Ss4Q4IIaaEHmBaChZBY8r3YUhT1n2fZAjE7cTJe2KxGyEZAnZBzdKH8Rk3ZCoJGcy7CttzySdiNN4WFZCBKuZBJJK4GUfrFe2ZBmZClkwZDZD');           
         } 
         catch(\Facebook\Exceptions\FacebookSDKException $e) {
             dd($e->getMessage());
         }
-        $data = json_decode($response->getBody(), true);       
-       return $data;
+        $data = json_decode($response->getBody(), true); 
+         foreach($data['data'] as $key=>$value) {
+          
+            $result[] = array(
+                'id' => $value['id'],
+                'name' => $value['name'],
+                );
+        }      
+       return $result;
     }
 
     
