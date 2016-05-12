@@ -615,19 +615,21 @@
     <script type="text/javascript" src="{{asset('js/circle-progress/jquery.circliful.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
     <!-- additional javascript -->
-    <script type='text/javascript' src="{{assest('js/number-progress-bar/jquery.velocity.min.js')}}"></script>
-    <script type='text/javascript' src="{{assest('js/number-progress-bar/number-pb.js') }}"></script>
-    <script type='text/javascript' src="{{assest('js/loader/loader.js') }}"></script>
-    <script type='text/javascript' src="{{assest('js/loader/demo.js') }}"></script>
+    <script type='text/javascript' src="{{asset('js/number-progress-bar/jquery.velocity.min.js')}}"></script>
+    <script type='text/javascript' src="{{asset('js/number-progress-bar/number-pb.js') }}"></script>
+    <script type='text/javascript' src="{{asset('js/loader/loader.js') }}"></script>
+    <script type='text/javascript' src="{{asset('js/loader/demo.js') }}"></script>
     <!-- FLOT CHARTS -->
-    <script src="{{assest('js/flot/jquery.flot.js')}}" type="text/javascript"></script>
+    <script src="{{asset('js/flot/jquery.flot.js')}}" type="text/javascript"></script>
     <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
-    <script src="{{assest('js/flot/jquery.flot.resize.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('js/flot/jquery.flot.resize.min.js')}}" type="text/javascript"></script>
     <!-- FLOT PIE PLUGIN - also used to draw donut charts -->
-    <script src="{{assest('js/flot/jquery.flot.pie.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('js/flot/jquery.flot.pie.min.js')}}" type="text/javascript"></script>
     <!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
-    <script src="{{assest('js/flot/jquery.flot.categories.min.js')}}" type="text/javascript"></script>
-    <script type="text/javascript" src="{{assest('js/skycons/skycons.js')}}"></script>
+    <script src="{{asset('js/flot/jquery.flot.categories.min.js')}}" type="text/javascript"></script>
+    <script type="text/javascript" src="{{asset('js/skycons/skycons.js')}}"></script>
+
+    @yield('script')
 
     <script type="text/javascript">
     $(function() {

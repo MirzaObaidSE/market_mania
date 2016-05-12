@@ -49,4 +49,7 @@ class User extends Model implements AuthenticatableContract,
         }
         return $query;
     }
+    public function contact(){
+        return $this->belongsToMany('App\Contact');
+    }
 }

@@ -134,4 +134,9 @@ Route::group(['middleware' => ['auth', 'customer'], 'prefix' => 'customer'], fun
         'as'=> 'search_query',
         'uses' => 'UserController@query'
     ]);
+
+    Route::post('add_customer',[
+        'as'=> 'add_customer',
+        'uses' => 'UserController@addCustomer'
+    ]);
 });

@@ -25,6 +25,7 @@
 
             </div>
         </div>
+    {!!Form::close()!!}    
          <h3> view makes </h3>
            @if(!empty($result))
          <div class="row">
@@ -44,7 +45,12 @@
                             <!-- /.box-header -->
                             <div class="box-body " style="display: block;">
                                 @foreach($result as $key => $value)
-                                    <div class="user-info-wrapper">
+                                    <div class="user-info-wrapper" id="user_{{{$value['id']}}}">
+                                        <input type="hidden" class="user_id" value="{{{$value['id']}}}" />
+                                        <input type="hidden" class="user_name" value="{{{$value['name']}}}" />
+                                        <input type="hidden" class="user_screen_name" value="{{{!empty($value['screen_name']) ? $value['screen_name'] : ''}}}" />
+                                        <input type="hidden" class="user_image" value="{{{!empty($value['image']) ? $value['image'] : ''}}}" />
+                                        <input type="hidden" class="user_network" value="{{{$network}}}" />
                                         <div class="image">
                                             @if(!empty($value['image']))
                                                 <a href="{{{$network === 'twitter' ? 'https://twitter.com/'.$value['screen_name'] : 'https://facebook.com/'.$value['id']}}}" target="_blank">    
@@ -62,8 +68,12 @@
                                                 {{{$value['name']}}}
                                             </a>
                                         </div>
+                                        
                                         <div class="add-button">
-                                            <button class="round" onclick="">Add</button>
+                                            <button class="round" onclick="addContact({{{$value['id']}}});">Add</button>
+                                        </div>
+                                        <div class="add-button ajax-loading" style="display:none;">
+                                            <img src="{{asset('img/ajax-loader.gif')}}" />
                                         </div>
                                         <div class="clr"></div>
                                     </div>
@@ -83,7 +93,32 @@
     
         
         
-{!!Form::close()!!}
 
+
+@section('script')
+    <script type="text/javascript">
+        function addContact (id) {
+            $('#user_'+id).find('.ajax-loading').show();
+            var network_id = $('#user_'+id).find('.user_id').val();
+            var network = $('#user_'+id).find('.user_network').val();
+            var name = $('#user_'+id).find('.user_name').val();
+            var screen_name = $('#user_'+id).find('.user_screen_name').val();
+            var image = $('#user_'+id).find('.user_image').val();
+            $.ajax({
+                url: "{{{route('add_customer')}}}",
+                type: 'post',
+                data: {network_id: network_id,network: network, name: name, screen_name: screen_name, image:image},
+                success: function(result) {
+                    if(result == 'success') {
+                        $('#user_'+id).find('.ajax-loading').hide();
+                        $('#user_'+id).find('button.round').addClass('bg-green');
+                        $('#user_'+id).find('button.round').attr('onclick','');
+                        $('#user_'+id).find('button.round').text('Added');
+                    }
+                }
+            });
+        }
+    </script>
+@endsection
 	 
 @endsection

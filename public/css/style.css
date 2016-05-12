@@ -872,3 +872,13 @@ ALERT
 .clr {
     clear: both;
 }
+.added_button {
+    background-color: green;
+    color: #ffffff;
+    cursor: default;
+
+}
+.ajax-loading {
+    margin-right: 10px;
+    padding-top: 12px;
+}

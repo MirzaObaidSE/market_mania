@@ -12,6 +12,8 @@ use App\User;
 use Illuminate\Support\Facades\Input;
 use App\Integration;
 use SammyK\LaravelFacebookSdk\LaravelFacebookSdk;
+use App\Contact;
+use App\ContactUser;
 
 class UserController extends Controller
 {
@@ -141,5 +143,32 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function addCustomer() {
+        try {
+            $user = Auth::User(); 
+            //check if contact already exist or not
+            $contact = Contact::where('network_id',Input::get('network_id'))
+                ->where('network',Input::get('network'))
+                ->first();
+            
+            if(empty($contact->id)) {
+                $contact = new Contact();
+            }
+            $contact->network_id = Input::get('network_id');
+            $contact->network = Input::get('network');
+            $contact->name = Input::get('name');
+            $contact->screen_name = Input::get('screen_name');
+            $contact->image = Input::get('image');
+            $contact->save();
+
+            $contact->user()->attach($user->id);
+            echo "success";
+        } catch(Exception $e) {
+            echo "error";    
+        }
+        die;
     }
 }
