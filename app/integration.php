@@ -9,6 +9,7 @@ use TwitterAPIExchange;
 use SammyK\LaravelFacebookSdk\LaravelFacebookSdk;
 use Facebook\FacebookRequest;
 use Auth;
+use DB;
 
 
 class Integration{
@@ -50,8 +51,7 @@ class Integration{
                 'user_already_added' => $this->isContactAdded('twitter',$value['id'])
                 );
         }
-        echo '<pre>';print_r($result);die;
-                return $result;
+        return $result;
     }
     //end twitter function
     //start Facebook 
@@ -69,6 +69,7 @@ class Integration{
             $result[] = array(
                 'id' => $value['id'],
                 'name' => $value['name'],
+                'user_already_added' => $this->isContactAdded('facebook',$value['id'])
                 );
         }      
        return $result;
@@ -76,9 +77,14 @@ class Integration{
 
     public function isContactAdded($network, $networkId) {
         $user = Auth::User();
-    $contactExists=User::join('contact_user','users.id','=','contact_user.user_id')
-        ->where('contact_user.contact_id',$networkid)->get();
-        if(!empty($contactExists)) {
+        /*DB::raw('SELECT cu.* from contact_user cu join contacts c on cu.contact_id = c.id where c.network_id = 1654747094 and cu.user_id = 9');*/
+        $contactExists = DB::table('contact_user')
+            ->join('contacts', 'contact_user.contact_id', '=', 'contacts.id')
+            ->where('contacts.network_id',$networkId)
+            ->where('contacts.network',$network)
+            ->where('contact_user.user_id',$user->id)
+            ->first();
+        if(!empty($contactExists->id)) {
             return 'yes';
         } else {
             return 'no';

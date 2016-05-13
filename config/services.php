@@ -44,5 +44,9 @@ return [
         'client_secret' => 'e649188452f510bb1c028ee200467d25',
         'redirect' => 'http://localhost:8000/callback_facebook',
     ],
+    'stripe' => [
+        'model'  => 'User',
+        'secret' => env('STRIPE_API_SECRET'),
+],
 
 ];

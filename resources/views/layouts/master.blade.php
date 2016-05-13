@@ -19,11 +19,11 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/theme.css')}}"/>
 
     <!-- pace loader -->
-    <script src="{{asset('js/pace/pace.css')}}"></script>
+    <script src="{{asset('js/pace/pace.js')}}"></script>
     <link href="{{asset('js/pace/themes/orange/pace-theme-flash.css')}}" rel="stylesheet" />
     <link rel="stylesheet" href="{{asset('js/slicknav/slicknav.css')}}"/>
     <link href="{{asset('js/stackable/responsive-table.css')}}" rel="stylesheet" />
-    <script src="{{asset('js/vender/mondernizr.css')}}"></script>
+    <script type="text/javascript" src="{{asset('/js/vendor/modernizr.js')}}"></script>
 
 </head>
 
@@ -51,7 +51,7 @@
                     <div id="tree-wrap">
                         <!-- Profile -->
                         <div class="profile">
-                            <img alt="" class="" src="./img/logo.png">
+                             <img alt="" class="" src="{{asset('./img/logo.png')}}">
                             <h3>Market Mania <small>1.0</small></h3>
 
                         </div>
@@ -62,14 +62,15 @@
                             <ul id="menu-showhide" class="topnav slicknav">
                                 <li>
                                     <a id="menu-select" class="tooltip-tip" href="index.html" title="Dashboard">
-                                        
+                                        <i class="icon-monitor"></i>
                                         <span>Dashboard</span>
 
                                     </a>
 
                                 </li>
                                 <li>
-                                    <a class="tooltip-tip" href="{{ action("AdminController@getuserlist") }}">               
+                                    <a class="tooltip-tip" href="{{ action("AdminController@getuserlist") }}">  
+                                        <i class="fontello-users-outline"> </i>             
                                         <span>User List</span>
 
                                     </a>
@@ -77,6 +78,7 @@
                                 </li>
                                  <li>
                                     <a class="tooltip-tip" href="{{ action("AdminController@create") }}">               
+                                        <i class="fontello-user-add-outline"> </i>
                                         <span>Create User</span>
 
                                     </a>
@@ -205,16 +207,10 @@
                                             </a>
                                         </li>
 
-                                        <li class="active right">
-                                            <a href="#">
-                                                <div class="label bg-white">More</div>
-                                            </a>
-                                        </li>
+                                        
                                     </ul>
                                 </li>
-                                <li class="bg-white">
-                                    <a class="right-off-canvas-toggle bg-white text-gray" href="#"><span style="font-size:13px" class="icon-view-list" ></span></a>
-                                </li>
+                               
                             </ul>
                         </section>
                     </nav>
@@ -243,7 +239,7 @@
 
 
                 <footer>
-                    <div id="footer">Copyright &copy; 2015 <a href="http://themeforest.net/user/matirasa">Matirasa</a> Made with <i class="fontello-heart-1 text-green"></i></div>
+                    <div id="footer">Copyright &copy; 2015 <a href="http://themeforest.net/user/matirasa">Market Mania</a> Made with <i class="fontello-heart-1 text-green"></i></div>
 
                 </footer>
             </div>

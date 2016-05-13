@@ -20,10 +20,10 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/login.css')}}"/>
     <!-- pace loader -->
     
-    <script src="{{asset('js/pace/pace.css')}}"></script>
+    <script src="{{asset('js/pace/pace.js')}}"></script>
     <link href="{{asset('js/pace/themes/orange/pace-theme-flash.css')}}" rel="stylesheet" />
     <link rel="stylesheet" href="{{asset('js/slicknav/slicknav.css')}}"/>
-    <script src="{{asset('js/vender/mondernizr.css')}}"></script>
+   <script type="text/javascript" src="{{asset('/js/vendor/modernizr.js')}}"></script>
 </head>
 
 <body>

@@ -136,6 +136,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+
       
 
         /*
@@ -149,6 +150,8 @@ return [
         SammyK\LaravelFacebookSdk\LaravelFacebookSdkServiceProvider::class,
         Vinkla\Instagram\InstagramServiceProvider::class,
         Illuminate\Html\HtmlServiceProvider::class,
+        Laravel\Cashier\CashierServiceProvider::class,
+        
     ],
 
     /*
@@ -198,10 +201,10 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-        'Facebook' => SammyK\LaravelFacebookSdk\FacebookFacade::class,
+        'Facebook'  => SammyK\LaravelFacebookSdk\FacebookFacade::class,
         'Instagram' => Vinkla\Instagram\Facades\Instagram::class,
-        'Form'=> Illuminate\Html\FormFacade::class,
-        'Html'=> Illuminate\Html\HtmlFacade::class,
+        'Form'      => Illuminate\Html\FormFacade::class,
+        'Html'      => Illuminate\Html\HtmlFacade::class,
 
 
     ],

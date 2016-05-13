@@ -6,7 +6,7 @@
 		   {!! csrf_field() !!}
 
 
-	 <h3> Enter data for search </h3>
+	 <h3> Enter Name for search </h3>
 	  	<div class="row collapse">
             <div class="small-3 columns">
                  {!! Form::text('name',null,array('placeholder'=> 'Find By Name')) !!}
@@ -26,10 +26,10 @@
             </div>
         </div>
     {!!Form::close()!!}    
-         <h3> view makes </h3>
-           @if(!empty($result))
+    @if(!empty($result))
+        <h3>Search Result for "{{{$name}}}" from "{{{$network}}}"</h3>
          <div class="row">
-
+                
                     <div class="large-12 columns">
                         <div class="box">
                             <div class="box-header bg-transparent">
@@ -68,10 +68,15 @@
                                                 {{{$value['name']}}}
                                             </a>
                                         </div>
-                                        
-                                        <div class="add-button">
-                                            <button class="round" onclick="addContact({{{$value['id']}}});">Add</button>
-                                        </div>
+                                        @if($value['user_already_added'] == 'no')
+                                            <div class="add-button">
+                                                <button class="round" onclick="addContact({{{$value['id']}}});">Add</button>
+                                            </div>
+                                        @else
+                                            <div class="add-button">
+                                                <button class="round bg-green">Added</button>
+                                            </div>
+                                        @endif    
                                         <div class="add-button ajax-loading" style="display:none;">
                                             <img src="{{asset('img/ajax-loader.gif')}}" />
                                         </div>
@@ -119,6 +124,4 @@
             });
         }
     </script>
-@endsection
-	 
 @endsection

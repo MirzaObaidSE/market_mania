@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
 Route::get('home', function () {
 
@@ -24,8 +24,12 @@ Route::get('home', function () {
         if(Auth::user()->type == 'admin'){
            return View('admin.index');
         } else {
-
-            return Redirect::to('customer/home');
+            if(Auth::user()->subscribed()) {
+                return Redirect::to('customer/home');    
+            } else {
+                return Redirect::to('customer/userbillling');
+            }
+            
         }
     }
 });
@@ -110,7 +114,7 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function(
 
 
 Route::group(['middleware' => ['auth', 'customer'], 'prefix' => 'customer'], function(){
-    Route::get('home',[
+    Route::get('user_home',[
         'as' => 'user_home',
         'uses' => 'UserController@index'
     ]);
@@ -138,5 +142,14 @@ Route::group(['middleware' => ['auth', 'customer'], 'prefix' => 'customer'], fun
     Route::post('add_customer',[
         'as'=> 'add_customer',
         'uses' => 'UserController@addCustomer'
+    ]);
+     Route::get('userbillling',[
+        'as'=> 'user_billing',
+        'uses' => 'UserController@billing'
+    ]);
+
+    Route::post('billing_payment',[
+        'as' => 'billing_payment',
+        'uses' => 'UserController@payment'
     ]);
 });

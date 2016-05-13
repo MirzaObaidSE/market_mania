@@ -14,6 +14,8 @@ use App\Integration;
 use SammyK\LaravelFacebookSdk\LaravelFacebookSdk;
 use App\Contact;
 use App\ContactUser;
+use Stripe\Stripe;
+
 
 class UserController extends Controller
 {
@@ -59,7 +61,7 @@ class UserController extends Controller
         
         $obj=new Integration();
         $result=$obj->handle_integration($name,$network);
-           return View('user.usersearch',compact('result'));
+        return View('user.usersearch',compact('result'));
     }
 
     /**
@@ -130,8 +132,17 @@ class UserController extends Controller
             $result=$obj->handle_integration($name,$network);    
         }
         
-        return View('user.usersearch',compact('result','network'));
+        return View('user.usersearch',compact('result','network','name'));
         
+    }
+    public function billing(){
+        return View('user.billing');
+    }
+
+    public function payment() {
+        $user = Auth::User();
+        $user->subscription(Input::get('subscription'))->create(Input::get('stripe-token'));
+        return Redirect()->route('user_home');
     }
 
     /**

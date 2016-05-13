@@ -4,7 +4,7 @@ use Closure;
 use Illuminate\Contracts\Auth\Guard;
 use Redirect;
 
-class CustomerMiddleware
+class PaymentMiddleware
 {
 
 
@@ -17,8 +17,10 @@ class CustomerMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if($request->user()->type !== 'user'){
-        	return view('errors.503');
+        
+        if ($request->user() && ! $request->user()->subscribed()) {
+            // This user is not a paying customer...
+            return redirect('customer/userbillling');
         }
         return $next($request);
     }

@@ -19,11 +19,11 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/theme.css')}}"/>
 
     <!-- pace loader -->
-    <script src="{{asset('js/pace/pace.css')}}"></script>
+    <script src="{{asset('js/pace/pace.js')}}"></script>
     <link href="{{asset('js/pace/themes/orange/pace-theme-flash.css')}}" rel="stylesheet" />
     <link rel="stylesheet" href="{{asset('js/slicknav/slicknav.css')}}"/>
     <link href="{{asset('js/stackable/responsive-table.css')}}" rel="stylesheet" />
-    <script src="{{asset('js/vender/mondernizr.css')}}"></script>
+    <script type="text/javascript" src="{{asset('/js/vendor/modernizr.js')}}"></script>
 
 </head>
 
@@ -51,7 +51,7 @@
                     <div id="tree-wrap">
                         <!-- Profile -->
                         <div class="profile">
-                            <img alt="" class="" src="./img/logo.png">
+                         <img alt="" class="" src="{{asset('./img/logo.png')}}">
                             <h3>Market Mania <small>1.0</small></h3>
 
                         </div>
@@ -62,7 +62,7 @@
                             <ul id="menu-showhide" class="topnav slicknav">
                                 <li>
                                     <a id="menu-select" class="tooltip-tip" href="index.html" title="Dashboard">
-                                        
+                                        <i class="icon-monitor"></i>
                                         <span>Dashboard</span>
 
                                     </a>
@@ -70,6 +70,7 @@
                                 </li>
                                 <li>
                                     <a class="tooltip-tip" href="{{ action("UserController@showprofile") }}">               
+                                        <i class="icon-user"></i>
                                         <span>Profile </span>
 
                                     </a>
@@ -77,7 +78,8 @@
                                 </li>
                                  <li>
                                     <a class="tooltip-tip" href="{{ action("UserController@search") }}">               
-                                        <span>Search User</span>
+                                        <i class="fontello-search"></i>
+                                        <span>Search User Online</span>
 
                                     </a>
                                     
@@ -121,136 +123,7 @@
                                     </ul>
                                 </li>
 
-                              <!--  <li>
-                                    <a class="tooltip-tip" href="#" title="Mail">
-                                        <i class=" icon-mail"></i>
-                                        <span>mail</span>
-
-                                    </a>
-                                    <ul>
-                                        <li>
-                                            <a href="mail.html" title="Inbox">Inbox
-                                                 <div class="noft-blue bg-red" style="display: inline-block; float: none;">256</div>
-                                            </a>
-                                        </li>
-                                        <li>
-
-                                            <a href="compose.html" title="Compose">Compose</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="icon-document-new"></i>
-                                        <span>Page&nbsp;
-                                    <small class="side-menu-noft bg-blue">hot</small></span>
-                                    </a>
-                                    <ul>
-                                        <li>
-                                            <a href="bootstrap/index.html">Bootstrap<div class="noft-blue bg-red" style="display: inline-block; float: none;"><strong>NEW</strong></div></a>
-                                        </li>
-                                         <li>
-                                            <a href="blog-list.html">Blog List</a>
-                                        </li>
-                                        <li>
-                                            <a href="blog-detail.html">Blog Detail</a>
-                                        </li>
-                                        <li>
-                                            <a href="gallery.html">Gallery</a>
-                                        </li>
-                                        <li>
-                                            <a href="calendar.html" title="Calender">Calendar</a>
-                                        </li>
-                                        <li>
-                                            <a href="master.html" title="Chart">Blank Page</a>
-                                        </li>
-                                        
-
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a class="tooltip-tip" href="#" title="UI">
-                                        <i class="icon-align-justify"></i>
-                                        <span>UI&nbsp;
-                                    <small class="side-menu-noft">new</small></span>
-                                    </a>
-                                    <ul>
-
-                                        <li>
-                                            <a href="element.html" title="Element">Element</a>
-                                        </li>
-                                        <li><a href="button.html" title="Button">
-                                            Button
-                                        </a>
-                                        </li>
-                                        <li>
-                                            <a href="tab.html" title="Tab & Accordion">Tab & Accordion</a>
-                                        </li>
-                                        <li>
-                                            <a href="typography.html" title="Typography">
-                                                
-                                                Typography
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="panel.html" title="panel">Panel</a>
-                                        </li>
-
-                                        <li>
-                                            <a href="grids.html" title="Grids">Grids</a>
-                                        </li>
-                                        <li>
-                                            <a href="chart.html" title="Chart">Chart</a>
-                                        </li>
-
-
-                                    </ul>
-                                </li>
-
-
-                                <li>
-                                    <a href="#">
-                                        <i class="fontello-doc-1"></i>
-                                        <span>Form&nbsp;  <small class="side-menu-noft">new</small></span>
-                                    </a>
-                                    <ul>
-                                        <li>
-                                            <a href="form-element.html" title="Form Elements">Form Elements</a>
-                                        </li>
-                                        <li>
-                                            <a href="andvance-form.html" title="Andvance Form">Andvance Form</a>
-                                        </li>
-                                        <li>
-                                            <a href="text-editor.html" title="Text Editor">Text Editor</a>
-                                        </li>
-                                        <li>
-                                            <a href="file-upload.html" title="File Upload">File Upload</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class=" icon-view-list-large"></i>
-                                        <span>Tables</span>
-                                    </a>
-                                    <ul>
-                                        <li>
-                                            <a href="table-static.html" title="Table Static">Table Static</a>
-                                        </li>
-                                        <li>
-                                            <a href="table-dynamic.html" title="Table Dynamic">Table Dynamic</a>
-
-                                        </li>
-
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a class="tooltip-tip" href="icon.html" title="Icons">
-                                        <i class="fontello-print"></i>
-                                        <span>Icons</span>
-
-                                    </a>
-                                </li>-->
+                              
 
                                 <li>
                                     <a class="tooltip-tip" href="#" title="Extra">
@@ -263,15 +136,6 @@
                                         </li>
                                         <li>
                                             <a href="pricing_table.html" title="Pricing Table">Pricing Table</a>
-                                        </li>
-                                        <li>
-                                            <a href="time-line.html" title="Time Line">Time Line</a>
-                                        </li>
-                                        <li>
-                                            <a href="login.html" title="Chart">Login</a>
-                                        </li>
-                                        <li>
-                                            <a href="map.html" title="Lock Screen">Map</a>
                                         </li>
                                         <li>
                                             <a href="404.html" title="404 Error Page">404 Error Page</a>
@@ -314,131 +178,10 @@
                         </ul>
 
                         <section class="top-bar-section ">
-                            <!-- Right Nav Section -->
-                            <!--<ul class="left">
-                                <li class="has-dropdown bg-white">
-                                    <a class="bg-white" href="#"><i class="text-green fa fa-envelope"></i>&nbsp;<span class="label edumix-msg-noft">84</span></a>
-                                    <ul class="dropdown dropdown-nest">
-                                        <li class="top-dropdown-nest"><span class="label round bg-green">MESSAGE</span>
-                                        </li>
-                                        <li class="bg-blue">
-                                            <a href="#">
-                                                <h3 class=" text-black"> Big Boss<b class="text-red fontello-record" ></b><span>Just Now<small></small></span>
-                                                </h3>
-                                                <p class=" text-black">Important task!</p>
-                                            </a>
-                                        </li>
-
-
-                                        <li>
-                                            <div class="slim-scroll">
-
-                                                <div>
-                                                    <a href="#">
-                                                        <h3>Noel A. Riley<b class="text-green fontello-record" ></b><span>12:23<small>PM</small></span>
-                                                </h3>
-                                                        <p>Dua dua sayang adik kakak</p>
-                                                    </a>
-                                                </div>
-                                                <div>
-                                                    <a href="#">
-                                                        <h3>Shirley J. Carneal<b class="text-gray fontello-record" ></b><span>10:11<small>PM</small></span>
-                                                </h3>
-                                                        <p>Tiga tiga sayang kekasihku</p>
-                                                    </a>
-                                                </div>
-                                                <div>
-                                                    <a href="#">
-                                                        <h3>Paul L. Williamsr<b class="text-gray fontello-record" ></b><span>Yesterday</span>
-                                                </h3>
-                                                        <p>Empat empat sayang semuanya</p>
-                                                    </a>
-                                                </div>
-                                                <div>
-                                                    <a href="#">
-                                                        <h3>William L. Wilcox<b class="text-gray fontello-record" ></b><span>2 Days Ago</span>
-                                                </h3>
-                                                        <p>Yang jomblo kasian deh lu</p>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </li>
-
-                                        <li class="active right">
-                                            <a href="#">
-                                                <div class="label bg-white">View All</div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="has-dropdown bg-white">
-                                    <a class="bg-white" href="#"><i class="text-blue fa fa-bell" ></i> <span class="label edumix-noft">45</span></a>
-                                    <ul class="dropdown dropdown-nest">
-                                        <li class="top-dropdown-nest"><span class="label round bg-blue">ALERT</span>
-                                        </li>
-                                        <li class="bg-black text-black">
-                                            <i class="icon-warning"></i>
-                                            <a href="#">
-                                                <h3 class="text-black">Sticky Very Important<span class="text-red fontello-record" ></span></h3>
-                                                <p class="text-black">1 minute ago</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <div class="slim-scroll">
-                                                <div>
-                                                    <i class="fontello-megaphone"></i>
-                                                    <a href="#">
-                                                        <h3>Announcements <span class="text-green fontello-record" ></span>
-                                                </h3>
-                                                        <p>Just Now !</p>
-                                                    </a>
-                                                </div>
-                                                <div>
-                                                    <i class="  fontello-attach-1"></i>
-                                                    <a href="#">
-                                                        <h3>Complete your profile<span class="text-yellow fontello-record" ></span>
-                                                </h3>
-                                                        <p>2 Minute Ago</p>
-                                                    </a>
-                                                </div>
-                                                <div>
-                                                    <i class="  fontello-calendar-1"></i>
-                                                    <a href="#">
-                                                        <h3>New Schedule Realease<span class="text-yellow fontello-record" ></span>
-                                                </h3>
-                                                        <p>30 Minute ago</p>
-                                                    </a>
-                                                </div>
-                                                <div>
-                                                    <i class="fontello-database-1"></i>
-                                                    <a href="#">
-                                                        <h3>New Student Data<span class="text-orange fontello-record" ></span>
-                                                </h3>
-                                                        <p>1 Hour ago</p>
-                                                    </a>
-                                                </div>
-                                                <div>
-                                                    <i class="fontello-graduation-cap"></i>
-                                                    <a href="#">
-                                                        <h3>Graduate Student List<span class="fontello-record" ></span>
-                                                </h3>
-                                                        <p>2 Days ago</p>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="active right">
-                                            <a href="#">
-                                                <div class="label bg-white">View All</div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <!-- Left Nav Section -->
+                        <!-- Left Nav Section 
                             <ul class="left">
 
-                                <!-- Search | has-form wrapper -->
+                                Search | has-form wrapper 
                                 <li class="has-form bg-white">
                                     <div class="row collapse">
 
@@ -448,11 +191,11 @@
                                         </div>
                                     </div>
                                 </li>
-                            </ul>
+                            </ul>-->
 
                             <ul class="right">
                                 <li class=" has-dropdown bg-white">
-                                    <a class="bg-white" href="#"><img alt="" class="admin-pic img-circle" src="http://api.randomuser.me/portraits/thumb/men/28.jpg"><span class="admin-pic-text text-gray">Hi, Dave Mattew </span>
+                                    <a class="bg-white" href="#"><span class="admin-pic-text text-gray">Hi, {{{$user->name}}} </span>
                                     </a>
 
                                     <ul class="dropdown dropdown-nest profile-dropdown">
@@ -471,21 +214,19 @@
                                         </li>
                                         <li>
                                             
-                                            <a href="">
+                                            <a href="{{ action("AuthController@logout") }}">
                                                 <h4>Logout<span class="text-dark-blue fontello-record" ></span></h4>
                                             </a>
                                         </li>
 
-                                        <li class="active right">
+                                        <!--<li class="active right">
                                             <a href="#">
                                                 <div class="label bg-white">More</div>
-                                            </a>
+                                            </a> -->
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="bg-white">
-                                    <a class="right-off-canvas-toggle bg-white text-gray" href="#"><span style="font-size:13px" class="icon-view-list" ></span></a>
-                                </li>
+                
                             </ul>
                         </section>
                     </nav>
@@ -498,12 +239,6 @@
                     </li>
                     <li>Dashboard
                     </li>
-                    <!--   <ul class="right inline-list">
-                        <li>Help Center</a>
-                        </li>
-                        <li>Mail Support
-                        </li>
-                    </ul> -->
                 </ul>
                 <!-- end of breadcrumbs -->
 
@@ -528,61 +263,8 @@
 
 
 
-            <!-- Right Menu--?
-            <aside class="right-off-canvas-menu">
-                <!-- whatever you want goes here 
-                <ul class="off-canvas-list">
-                    <li>
-                        <label class="bg-transparent" style="padding:25px 20px"><span class="label round bg-green">online</span><i class=" icon-gear right"></i>
-                        </label>
-                    </li>
-                    <li>
-                        <a href="#"><img alt="" class="chat-pic" src="http://api.randomuser.me/portraits/thumb/men/25.jpg"><b>Walter M. Reed</b>
-                            <br>Hi, there...</a>
-                    </li>
-                    <li>
-                        <a href="#"><img alt="" class="chat-pic" src="http://api.randomuser.me/portraits/thumb/women/26.jpg"><b>Evelyn G. Thrailkill</b>
-                            <br>Ok, good luck!</a>
-                    </li>
-                    <li>
-                        <a href="#"><img alt="" class="chat-pic" src="http://api.randomuser.me/portraits/thumb/men/27.jpg"><b>Michael L. Merchant</b>
-                            <br>Do you receive my email?</a>
-                    </li>
-
-                    <li>
-                        <a href="#"><img alt="" class="chat-pic" src="http://api.randomuser.me/portraits/thumb/men/29.jpg"><b>James S. Houchin</b>
-                            <br>Thak you, you're wellcome</a>
-                    </li>
-
-                    <li>
-                        <label class="bg-transparent" style="padding:25px 20px"><span class="label round bg-opacity-white">offline</span><i class="icon-gear right"></i>
-                        </label>
-                    </li>
-
-                    <li>
-                        <a href="#"><img alt="" class="chat-pic chat-pic-gray" src="http://api.randomuser.me/portraits/thumb/men/30.jpg"><b>Allen M. Plant</b>
-                            <br>Hi, there...</a>
-                    </li>
-                    <li>
-                        <a href="#"><img alt="" class="chat-pic chat-pic-gray" src="http://api.randomuser.me/portraits/thumb/men/31.jpg"><b>Arthur S. Galindo</b>
-                            <br>Hi, there...</a>
-                    </li>
-                    <li>
-                        <a href="#"><img alt="" class="chat-pic chat-pic-gray" src="http://api.randomuser.me/portraits/thumb/women/32.jpg"><b>Joyce T. True</b>
-                            <br>Hi, there...</a>
-                    </li>
-                    <li>
-                        <a href="#"><img alt="" class="chat-pic chat-pic-gray" src="http://api.randomuser.me/portraits/thumb/men/33.jpg"><b>Christopher A. Charpentier</b>
-                            <br>Hi, there...</a>
-                    </li>
-                    <li>
-                        <a href="#"><img alt="" class="chat-pic chat-pic-gray" src="http://api.randomuser.me/portraits/thumb/women/34.jpg"><b>Teresa M. Boothe</b>
-                            <br>Hi, there...</a>
-                    </li>
-
-
-                </ul>
-            </aside>
+           
+         
             <!-- close the off-canvas menu -->
             <a class="exit-off-canvas"></a>
             <!-- End of Right Menu -->
@@ -602,9 +284,9 @@
     <script type="text/javascript" src="{{asset('js/waypoints.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/preloader-script.js')}}"></script>
     <!-- foundation javascript -->
-    <script type='text/javascript' src="js/foundation.min.js"></script>
+    <script type='text/javascript' src="{{asset('js/foundation.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/foundation.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/foundation/foundation.#111111.js')}}"></script>
+    
 
     <!-- main edumix javascript -->
     <script type="text/javascript" src="{{asset('js/slimscroll/jquery.slimscroll.js')}}"></script>
@@ -620,13 +302,13 @@
     <script type='text/javascript' src="{{asset('js/loader/loader.js') }}"></script>
     <script type='text/javascript' src="{{asset('js/loader/demo.js') }}"></script>
     <!-- FLOT CHARTS -->
-    <script src="{{asset('js/flot/jquery.flot.js')}}" type="text/javascript"></script>
+    <!--<script src="{{asset('js/flot/jquery.flot.js')}}" type="text/javascript"></script>
     <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
-    <script src="{{asset('js/flot/jquery.flot.resize.min.js')}}" type="text/javascript"></script>
+    <!--<script src="{{asset('js/flot/jquery.flot.resize.min.js')}}" type="text/javascript"></script>
     <!-- FLOT PIE PLUGIN - also used to draw donut charts -->
-    <script src="{{asset('js/flot/jquery.flot.pie.min.js')}}" type="text/javascript"></script>
+    <<!--<script src="{{asset('js/flot/jquery.flot.pie.min.js')}}" type="text/javascript"></script>
     <!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
-    <script src="{{asset('js/flot/jquery.flot.categories.min.js')}}" type="text/javascript"></script>
+    <!--<script src="{{asset('js/flot/jquery.flot.categories.min.js')}}" type="text/javascript"></script>-->
     <script type="text/javascript" src="{{asset('js/skycons/skycons.js')}}"></script>
 
     @yield('script')
@@ -712,14 +394,14 @@
         ];
 
 
-        $.plot("#line-chart", [line_data1, line_data2], {
+        /*$.plot("#line-chart", [line_data1, line_data2], {
             grid: {
                 hoverable: true,
                 borderColor: "#E2E6EE",
                 borderWidth: 1,
                 tickColor: "#E2E6EE"
             },
-            series: {
+            series: {   
                 shadowSize: 0,
                 lines: {
                     show: true
@@ -738,7 +420,7 @@
             xaxis: {
                 show: true
             }
-        });
+        });*/
         //Initialize tooltip on hover
         $("<div class='tooltip-inner' id='line-chart-tooltip'></div>").css({
             position: "absolute",
@@ -791,7 +473,7 @@
             [18, 169.5],
             [19, 168.0]
         ];
-        $.plot("#area-chart", [areaData], {
+        /*$.plot("#area-chart", [areaData], {
             grid: {
                 borderWidth: 0
             },
@@ -808,7 +490,7 @@
             xaxis: {
                 show: false
             }
-        });
+        });*/
 
         /* END AREA CHART */
 
