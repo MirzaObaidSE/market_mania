@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\User;
+use App\Contact;
 use View;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
@@ -15,37 +16,20 @@ use Illuminate\Routing\Redirector;
 
 class AdminController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function getuserlist()
     {
         
         $keyword = Input::get('search','');
         $alluser = User::SearchByKeyword($keyword)->get();
         return View::make('admin.userlist' , compact('alluser'));
-
-        //echo '<pre>';print_r($alluser);die;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return View('admin.createuser');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
          $input = Input::all();
@@ -60,12 +44,6 @@ class AdminController extends Controller
          return Redirect()->route('alluser');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
@@ -75,12 +53,6 @@ class AdminController extends Controller
         return View('admin.index');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $user=User::find($id);
@@ -90,13 +62,6 @@ class AdminController extends Controller
         return View('admin.edit',compact('user'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $user = User::find($id);
@@ -110,17 +75,15 @@ class AdminController extends Controller
 
         
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function delete($id)
     {
         $user=User::find($id);
         $user->delete();
         return Redirect()->route('alluser');
+    }
+    public function savedbyuser(){
+        $allcontact=Contact::all();
+        return View('admin.savedbyuser',compact('allcontact'));
+          
     }
 }

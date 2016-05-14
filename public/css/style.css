@@ -882,3 +882,6 @@ ALERT
     margin-right: 10px;
     padding-top: 12px;
 }
+.payment-errors{
+    color:red;
+}

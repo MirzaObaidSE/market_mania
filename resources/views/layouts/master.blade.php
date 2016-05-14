@@ -84,44 +84,14 @@
                                     </a>
                                     
                                 </li>
-                                <li>
-                                    <a class="tooltip-tip" href="#">
-                                        <i class=" icon-window"></i>
-                                        <span>Layout<small class="side-menu-noft">New</small></span>
+                                 <li>
+                                    <a class="tooltip-tip" href="{{ action("AdminController@savedbyuser") }}">               
+                                        <i class="entypo-users"> </i>
+                                        <span>Saved Contact By User</span>
 
                                     </a>
-                                    <ul>
-                                        <li>
-                                            <a href="sidebar-fixed.html">Sidebar Fixed</a>
-                                        </li>  
-                                        <li>
-                                            <a href="all-fixed.html">All Fixed</a>
-                                        </li>
-                        
-                                    </ul>
-                                </li>
-
-                                <li>
-                                    <a class="tooltip-tip" href="#" title="Mail">
-                                        <i class=" icon-preview"></i>
-                                        <span>Skin</span>
-
-                                    </a>
-                                    <ul>
-
-                                        <li>
-                                            <a href="blue-skin.html" title="Black Skin">Blue Skin</a>
-                                        </li>
-                                        <li>
-
-                                            <a href="white-skin.html" title="White Skin">White Skin</a>
-                                        </li>
-                                        <li>
-
-                                            <a href="green-skin.html" title="Blue Skin">Green Skin</a>
-                                        </li>
-                                    </ul>
-                                </li>
+                                    
+                                </li>                                                              
                                 <li>
                                     <a class="tooltip-tip" href="#" title="Extra">
                                         <i class="fontello-beaker"></i>
@@ -183,7 +153,7 @@
                                
                             <ul class="right">
                                 <li class=" has-dropdown bg-white">
-                                    <a class="bg-white" href="#"><img alt="" class="admin-pic img-circle" src="http://api.randomuser.me/portraits/thumb/men/28.jpg"><span class="admin-pic-text text-gray">Hi, Dave Mattew </span>
+                                   <a class="bg-white" href="#"><span class="admin-pic-text text-gray">Hi, {{{$user->name}}} </span>
                                     </a>
 
                                     <ul class="dropdown dropdown-nest profile-dropdown">
@@ -194,15 +164,10 @@
                                                 <h4>Profile<span class="text-aqua fontello-record" ></span></h4>
                                             </a>
                                         </li>
-                                        <li>
-                                            <i class="icon-folder-open"></i>
-                                            <a href="#">
-                                                <h4>Account<span class="text-blue fontello-record" ></span></h4>
-                                            </a>
-                                        </li>
+                                        
                                         <li>
                                             <i class="icon-upload"></i>
-                                            <a href="login.html">
+                                            <a href="{{ action("AuthController@logout") }}">
                                                 <h4>Logout<span class="text-dark-blue fontello-record" ></span></h4>
                                             </a>
                                         </li>
@@ -261,9 +226,8 @@
     <script type="text/javascript" src="{{asset('js/waypoints.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/preloader-script.js')}}"></script>
     <!-- foundation javascript -->
-    <script type='text/javascript' src="js/foundation.min.js"></script>
     <script type="text/javascript" src="{{asset('js/foundation.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/foundation/foundation.#111111.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/foundation/foundation.js')}}"></script>
 
     <!-- main edumix javascript -->
     <script type="text/javascript" src="{{asset('js/slimscroll/jquery.slimscroll.js')}}"></script>
@@ -369,7 +333,7 @@
         ];
 
 
-        $.plot("#line-chart", [line_data1, line_data2], {
+       /* $.plot("#line-chart", [line_data1, line_data2], {
             grid: {
                 hoverable: true,
                 borderColor: "#E2E6EE",
@@ -395,7 +359,7 @@
             xaxis: {
                 show: true
             }
-        });
+        });*/
         //Initialize tooltip on hover
         $("<div class='tooltip-inner' id='line-chart-tooltip'></div>").css({
             position: "absolute",
@@ -448,7 +412,7 @@
             [18, 169.5],
             [19, 168.0]
         ];
-        $.plot("#area-chart", [areaData], {
+       /* $.plot("#area-chart", [areaData], {
             grid: {
                 borderWidth: 0
             },
@@ -465,7 +429,7 @@
             xaxis: {
                 show: false
             }
-        });
+        });*/
 
         /* END AREA CHART */
 

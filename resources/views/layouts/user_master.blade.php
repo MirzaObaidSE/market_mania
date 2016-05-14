@@ -84,24 +84,15 @@
                                     </a>
                                     
                                 </li>
-                               <!--- <li>
-                                    <a class="tooltip-tip" href="#">
-                                        <i class=" icon-window"></i>
-                                      <span>Layout<small class="side-menu-noft">New</small></span>
+                                <li>
+                                    <a class="tooltip-tip" href="{{ action("UserController@ShowUser") }}">               
+                                        <i class="fontello-search-outline"></i>
+                                        <span>Search Saved Contact</span>
 
                                     </a>
-                                    <ul>
-                                        <li>
-                                            <a href="sidebar-fixed.html">Sidebar Fixed</a>
-                                        </li>  
-                                        <li>
-                                            <a href="all-fixed.html">All Fixed</a>
-                                        </li>
-                        
-                                    </ul>
-                                </li>-->
-
-                                <li>
+                                    
+                                </li>
+                               <!-- <li>
                                     <a class="tooltip-tip" href="#" title="Mail">
                                         <i class=" icon-preview"></i>
                                         <span>Skin</span>
@@ -121,7 +112,7 @@
                                             <a href="green-skin.html" title="Blue Skin">Green Skin</a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li>-->
 
                               
 

@@ -146,7 +146,7 @@
                 
                     <div class="row collapse">
                                                 
-                        <button id="btn-signup" class="bg-green small-12  columns" type="submit"><span> Select Plan </span></button>
+                        <button id="btn-signup" class="bg-green small-12  columns" type="submit"><span> Subscribe </span></button>
                                              
                     </div>
                 

@@ -25,7 +25,7 @@ Route::get('home', function () {
            return View('admin.index');
         } else {
             if(Auth::user()->subscribed()) {
-                return Redirect::to('customer/home');    
+                return Redirect::to('customer/user_home');    
             } else {
                 return Redirect::to('customer/userbillling');
             }
@@ -83,6 +83,10 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function(
     Route::get('alluser',[
         'as' => 'alluser',
         'uses' => 'AdminController@getuserlist'
+    ]);
+     Route::get('savedbyuser',[
+        'as'=> 'saved_user',
+        'uses' => 'AdminController@savedbyuser'
     ]);
      Route::get('add_user',[
         'as' => 'add_user',
@@ -151,5 +155,9 @@ Route::group(['middleware' => ['auth', 'customer'], 'prefix' => 'customer'], fun
     Route::post('billing_payment',[
         'as' => 'billing_payment',
         'uses' => 'UserController@payment'
+    ]);
+    Route::get('showusers',[
+        'as'=> 'user_Users',
+        'uses' => 'UserController@ShowUser'
     ]);
 });

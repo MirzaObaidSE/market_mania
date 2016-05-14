@@ -5,17 +5,14 @@
 	  
 		   {!! csrf_field() !!}
 
-
+   
 	 <h3> Enter Name for search </h3>
 	  	<div class="row collapse">
             <div class="small-3 columns">
                  {!! Form::text('name',null,array('placeholder'=> 'Find By Name')) !!}
             </div>
             <div class="small-3 small-offset-1 columns">
-            	{!! Form::select('network', [
-					   'facebook' => 'Facebook',
-					   'twitter' => 'Twitter']
-					) !!}
+            	{!! Form::select('network',$selectoption ) !!}
         		</select>
             </div>
             <div class="small-3 small-offset-1 columns">
@@ -25,6 +22,7 @@
 
             </div>
         </div>
+  
     {!!Form::close()!!}    
     @if(!empty($result))
         <h3>Search Result for "{{{$name}}}" from "{{{$network}}}"</h3>
@@ -99,7 +97,7 @@
         
         
 
-
+@endsection
 @section('script')
     <script type="text/javascript">
         function addContact (id) {
@@ -124,4 +122,5 @@
             });
         }
     </script>
+
 @endsection

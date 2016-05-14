@@ -58,7 +58,7 @@ class Integration{
     Public function getFacebookUser($name){           
     	$fb = app(\SammyK\LaravelFacebookSdk\LaravelFacebookSdk::class);
         try {   
-            $response = $fb->Get('/search?q="'.$name.'"&type=user&limit=30','EAASN5j34BJMBAPuAlhOupa4lH53zM5wSlrX94D8icPZAlepmENT4IYO7Ya0pL6ZAm3crXMdWwcRVNyLvAciF9USbe7qFIckZBtmUi51na5Dj3DGwLZByCQkRoCWQQhGXqtRWRF0oH0P5sZBT0vyu9F5CIG0t95xV4FnvWuwhGuwZDZD');           
+            $response = $fb->Get('/search?q="'.$name.'"&type=user&limit=30','EAASN5j34BJMBAMBjaCdZCyS9ZCXlTeNuW3YQuFSCxAubF5h5UEtFWT8hZCbK8ZCiZCxW1Fi3yZCZC6sqUPrws9L8vdpCEVlBchMZB3OTUu9kGGsfn5EiAHhUBzD8Xoqu2HUAlouodHz1OuDDbXQpBjhsVmZBZA38Bqad3peFYrBMIZBJwZDZD');           
         } 
         catch(\Facebook\Exceptions\FacebookSDKException $e) {
             dd($e->getMessage());

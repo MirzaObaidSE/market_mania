@@ -15,6 +15,7 @@ use SammyK\LaravelFacebookSdk\LaravelFacebookSdk;
 use App\Contact;
 use App\ContactUser;
 use Stripe\Stripe;
+use Config;
 
 
 class UserController extends Controller
@@ -72,7 +73,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         
     }
 
     /**
@@ -81,9 +82,23 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+       
+    public function ShowUser()
     {
-        //
+        $current = Auth::User();
+        $user = User::find($current->id);
+
+        //$contact = new Contact;
+        $name = Input::get('name');
+        if(!empty($name)){
+        $result=$user->contact()->where('name','like','%'.$name.'%')->get();
+        return View('user.savedcontact',compact('result'));
+        }
+        else{
+        $result=$user->contact()->get();
+        //echo "<pre>"; print_r($result);die();
+        return View('user.savedcontact',compact('result'));
+        }
     }
 
     /**
@@ -124,6 +139,7 @@ class UserController extends Controller
     }
     public function search()
     {
+        $user = Auth::user();
         $name = Input::get('name','');
         $network= Input::get('network','');
         $result = array();
@@ -131,8 +147,9 @@ class UserController extends Controller
             $obj=new Integration();
             $result=$obj->handle_integration($name,$network);    
         }
-        
-        return View('user.usersearch',compact('result','network','name'));
+
+        $selectoption = Config::get('general.'.$user->stripe_plan);
+        return View('user.usersearch',compact('result','network','name','selectoption'));
         
     }
     public function billing(){
