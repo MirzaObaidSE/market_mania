@@ -10,7 +10,7 @@
                                 <div class="row">
                                     <div class="edumix-signup-panel">
                                         <p class="welcome"> Welcome to this awesome app!</p>
-                                      {!! Form::open(array('route' => 'createuser')) !!}
+                                      {!! Form::open(array('route' => 'createuser', 'id'=>'admincreate')) !!}
                                             {!! csrf_field() !!}
                                             <div class="row collapse">
                                                 <div class="small-5  columns">
@@ -72,4 +72,30 @@
                                 </div>
                             </div>
                         </div>
+@endsection
+@section('script')
+<script type="text/javascript">
+   $('#admincreate').validate({
+            rules: {
+                name:{
+                    required:true
+                },
+                email: {
+                    required: true, 
+                    email: true    
+                },
+                password:{
+                    required:true
+                },
+                password_confirmation:{
+                    required:true
+                },
+                phone_no:{
+                    required:true
+                },
+
+            },
+
+        });
+</script>
 @endsection

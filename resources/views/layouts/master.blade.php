@@ -25,6 +25,7 @@
     <link href="{{asset('js/stackable/responsive-table.css')}}" rel="stylesheet" />
     <script type="text/javascript" src="{{asset('/js/vendor/modernizr.js')}}"></script>
 
+
 </head>
 
 <body>
@@ -204,7 +205,7 @@
 
 
                 <footer>
-                    <div id="footer">Copyright &copy; 2015 <a href="http://themeforest.net/user/matirasa">Market Mania</a> Made with <i class="fontello-heart-1 text-green"></i></div>
+                    <div id="footer">Copyright &copy; 2016 <a href="#">Market Mania</a> Made with <i class="fontello-heart-1 text-green"></i></div>
 
                 </footer>
             </div>
@@ -228,7 +229,7 @@
     <!-- foundation javascript -->
     <script type="text/javascript" src="{{asset('js/foundation.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/foundation/foundation.js')}}"></script>
-
+    <script type='text/javascript' src="{{asset('js/jquery.validate.min.js')}}"></script>
     <!-- main edumix javascript -->
     <script type="text/javascript" src="{{asset('js/slimscroll/jquery.slimscroll.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/slicknav/jquery.slicknav.js')}}"></script>

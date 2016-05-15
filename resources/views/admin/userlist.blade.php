@@ -2,7 +2,7 @@
 @section('content')
      
         <div>
-            <Form action="" method="get"> 
+            <Form action="" method="get" id="alluserForm"> 
                 <div class="large-3 columns">
                     {!! Form::text('search',null,array('placeholder'=> 'Find By Name,email,Phone No')) !!} 
                 </div>   
@@ -73,4 +73,16 @@
                 </div>   
     
     	
+@endsection
+@section('script')
+<script type="text/javascript">
+$('#alluserForm').validate({
+       
+        rules: {
+                search:{
+                    required:true
+                },
+            },
+        });
+</script>
 @endsection

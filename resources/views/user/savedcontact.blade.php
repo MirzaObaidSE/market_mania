@@ -1,6 +1,6 @@
 @extends('layouts.user_master')
 @section('content')
-		<Form action="" method="get"> 
+		<Form action="" method="get" id="savedForm"> 
 	    	{!! csrf_field() !!}
 			<h3> Enter Name for search </h3>
 	  		<div class="row collapse">
@@ -58,3 +58,16 @@
                     </div>
                 </div>
 @endsection
+@section('script')
+<script type="text/javascript">
+$('#savedForm').validate({
+       
+        rules: {
+                name:{
+                    required:true
+                },
+            },
+        });
+</script>
+@endsection
+

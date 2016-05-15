@@ -2,7 +2,7 @@
 @section('content')
 	<h3> Saved Contacts By Users </h3>
 		<div>
-            <Form action="" method="get"> 
+            <Form action="" method="get" id="savedbyuser"> 
                 <div class="large-3 columns">
                     {!! Form::text('search',null,array('placeholder'=> 'Find By Name,network')) !!} 
                 </div>   
@@ -23,6 +23,7 @@
                         </div>
                         <h3 class="box-title"><i class="icon-menu"></i>
                             <span>BASIC</span>
+                            <span><a href="{!! route('downloadcsv') !!}">Download in CSV</a></span>
                         </h3>
                     </div>
                     <!-- /.box-header -->
@@ -64,4 +65,16 @@
                 <!-- box -->
             </div>
         </div>   
+@endsection
+@section('script')
+<script type="text/javascript">
+$('#savedbyuser').validate({
+       
+        rules: {
+                search:{
+                    required:true
+                },
+            },
+        });
+</script>
 @endsection

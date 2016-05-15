@@ -113,6 +113,10 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function(
         'as'=> 'delete_user',
         'uses' => 'AdminController@delete'
     ]);
+    Route::get('downloadcsv',[
+        'as' => 'downloadcsv',
+        'uses' => 'UserController@downloadCsv'
+    ]);
 
 });
 
@@ -160,4 +164,6 @@ Route::group(['middleware' => ['auth', 'customer'], 'prefix' => 'customer'], fun
         'as'=> 'user_Users',
         'uses' => 'UserController@ShowUser'
     ]);
+
+
 });

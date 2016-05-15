@@ -25,6 +25,7 @@
     <link href="{{asset('js/stackable/responsive-table.css')}}" rel="stylesheet" />
     <script type="text/javascript" src="{{asset('/js/vendor/modernizr.js')}}"></script>
 
+
 </head>
 
 <body>
@@ -277,6 +278,7 @@
     <!-- foundation javascript -->
     <script type='text/javascript' src="{{asset('js/foundation.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/foundation.min.js')}}"></script>
+    <script type='text/javascript' src="{{asset('js/jquery.validate.min.js')}}"></script>
     
 
     <!-- main edumix javascript -->

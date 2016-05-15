@@ -60,7 +60,7 @@
                                 <div class="row">
                                     <div class="edumix-signup-panel">
                                         <p class="welcome"> Welcome to this awesome app!</p>
-                                      <form method="POST" action="/auth/register">
+                                      <form method="POST" action="/auth/register" id="registrationform">
                                             {!! csrf_field() !!}
                                             <div class="row collapse">
                                                 <div class="small-5  columns">
@@ -152,6 +152,7 @@
     <!-- foundation javascript -->
     <script type="text/javascript" src="{{asset('js/foundation.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/foundation/foundation.dropdown.js')}}"></script>
+        <script type='text/javascript' src="{{asset('js/jquery.validate.min.js')}}"></script>
     <!-- main edumix javascript -->
     <script type="text/javascript" src="{{asset('js/slimscroll/jquery.slimscroll.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/slicknav/jquery.slicknav.js')}}"></script>
@@ -166,6 +167,28 @@
 
     <script>
     $(document).foundation();
+     $('#registrationform').validate({
+            rules: {
+                name:{
+                    required:true
+                },
+                email: {
+                    required: true, 
+                    email: true    
+                },
+                password:{
+                    required:true
+                },
+                password_confirmation:{
+                    required:true
+                },
+                phone_no:{
+                    required:true
+                },
+
+            },
+
+        });
     </script>
 
 

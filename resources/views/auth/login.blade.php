@@ -59,7 +59,7 @@
                                 <div class="row">
                                     <div class="edumix-signup-panel">
                                         <p class="welcome"> Welcome to this awesome app!</p>
-                                      <form method="POST" action="/auth/login">
+                                      <form method="POST" action="/auth/login" id="loginform">
                                         {!! csrf_field() !!}
                                             <div class="row collapse">
                                                 <div class="small-2  columns">
@@ -153,12 +153,26 @@
     <script type="text/javascript" src="{{asset('js/number/jquery.counterup.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/circle-progress/jquery.circliful.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
+    <script type='text/javascript' src="{{asset('js/jquery.validate.min.js')}}"></script>
     <!-- additional javascript -->
 
 
 
-    <script>
-    $(document).foundation();
+  
+<!-- $(document).foundation();-->
+    <script type="text/javascript">
+        $('#loginform').validate({
+            rules: {
+                email: {
+                    required: true, 
+                    email: true    
+                },
+                password:{
+                    required:true
+                },            
+            },
+
+        });
     </script>
 
 

@@ -8,7 +8,7 @@
                                 <div class="row">
                                     <div class="edumix-signup-panel">
                                         <p class="welcome"> Welcome to this awesome app!</p>
-                                      {!! Form::model($user, array('route' => array('update_by_user', $user->id))) !!}
+                                      {!! Form::model($user, array('route' => array('update_by_user', $user->id),'id' => 'editForm')) !!}
                                             {!! csrf_field() !!}
                                             <div class="row collapse">
                                                 <div class="small-5  columns">
@@ -70,4 +70,28 @@
                                 </div>
                             </div>
                         </div>
+@endsection
+
+@section('script')
+    <script type="text/javascript">
+        $('#editForm').validate({
+            rules: {
+                email: {
+                    required: true, 
+                    email: true    
+                },
+                phone_no:{
+                    required:true
+                },
+                name:{
+                    required:true
+                },
+                website:{
+                    required:true,
+                    url: true
+                },
+            },
+
+        });
+    </script>
 @endsection

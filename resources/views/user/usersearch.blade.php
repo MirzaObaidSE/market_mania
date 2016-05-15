@@ -1,12 +1,10 @@
 @extends('layouts.user_master')
 @section('content')
-
-	   <Form action="" method="get"> 
-	  
-		   {!! csrf_field() !!}
+    <Form id="searchForm" action="" method="get"> 
+	   {!! csrf_field() !!}
 
    
-	 <h3> Enter Name for search </h3>
+	   <h3> Enter Name for search </h3>
 	  	<div class="row collapse">
             <div class="small-3 columns">
                  {!! Form::text('name',null,array('placeholder'=> 'Find By Name')) !!}
@@ -121,6 +119,15 @@
                 }
             });
         }
+         $('#searchForm').validate({
+       
+        rules: {
+                name:{
+                    required:true
+                },
+            },
+        });
+
     </script>
 
 @endsection
