@@ -86,8 +86,26 @@
                                                 </div>
                                                 
                                             </div>
-                                        <p>Already have an account? <a href="#">Forgot password ?</a>
-                                        </p>
+                                            <div  class="row collapse" >
+                                                <div class="small-12 columns ">
+                                                    <br>
+
+                                                </div>
+                                            </div>
+                                            <div class="row collapse">
+                                            
+                                                    @if (count($errors))
+                                                        <div data-alert class="alert-box alert round">
+                                                            <ul>
+                                                                @foreach($errors->all() as $error)
+                                                                
+                                                                    <li>{{ $error }}</li>
+                                                            @endforeach
+                                                            </ul>
+                                                        </div>
+                                                    @endif
+                                            
+                                            </div>
                                         <div class="row collapse">
                                         <button class="bg-green small-12 columns" type="submit"><span>Log in</span></button>
                                         </div>
@@ -102,13 +120,13 @@
                                 <div class="row">
                                     <div class="large-5 columns no-pad">
                                         <div class="edumix-footer-panel">
-                                            <a href="#"><span class="bg-aqua"><i class="fa fa-twitter"></i>&nbsp;&nbsp;sign in with twitter</span></a>
+                                            <a href="https://www.twitter.com"><span class="bg-aqua"><i class="fa fa-twitter"></i>&nbsp;&nbsp;sign in with twitter</span></a>
                                         </div>
                                     </div>
                                     <div class="large-2 columns"></div>
                                     <div class="large-5 columns no-pad">
                                         <div class="edumix-footer-panel">
-                                            <a href="#"><span class="bg-dark-blue"><i class="fa fa-facebook"></i>&nbsp;&nbsp;sign in with facebook</span></a>
+                                            <a href="https://www.facebook.com"><span class="bg-dark-blue"><i class="fa fa-facebook"></i>&nbsp;&nbsp;sign in with facebook</span></a>
                                         </div>
                                     </div>
                                 </div>

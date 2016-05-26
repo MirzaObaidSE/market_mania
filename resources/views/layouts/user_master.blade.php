@@ -92,52 +92,7 @@
 
                                     </a>
                                     
-                                </li>
-                               <!-- <li>
-                                    <a class="tooltip-tip" href="#" title="Mail">
-                                        <i class=" icon-preview"></i>
-                                        <span>Skin</span>
-
-                                    </a>
-                                    <ul>
-
-                                        <li>
-                                            <a href="blue-skin.html" title="Black Skin">Blue Skin</a>
-                                        </li>
-                                        <li>
-
-                                            <a href="white-skin.html" title="White Skin">White Skin</a>
-                                        </li>
-                                        <li>
-
-                                            <a href="green-skin.html" title="Blue Skin">Green Skin</a>
-                                        </li>
-                                    </ul>
-                                </li>-->
-
-                              
-
-                                <li>
-                                    <a class="tooltip-tip" href="#" title="Extra">
-                                        <i class="fontello-beaker"></i>
-                                        <span>Extra</span>
-                                    </a>
-                                    <ul>
-                                        <li>
-                                            <a href="invoice.html" title="Invoice">Invoice</a>
-                                        </li>
-                                        <li>
-                                            <a href="pricing_table.html" title="Pricing Table">Pricing Table</a>
-                                        </li>
-                                        <li>
-                                            <a href="404.html" title="404 Error Page">404 Error Page</a>
-                                        </li>
-                                        <li>
-                                            <a href="500.html" title="500 Error Page">500 Error Page</a>
-                                        </li>
-
-                                    </ul>
-                                </li>
+                                </li> 
                             </ul>
                         </div>
                         <!-- end of Menu sidebar  -->
@@ -170,21 +125,7 @@
                         </ul>
 
                         <section class="top-bar-section ">
-                        <!-- Left Nav Section 
-                            <ul class="left">
-
-                                Search | has-form wrapper 
-                                <li class="has-form bg-white">
-                                    <div class="row collapse">
-
-                                        <div class="large-12 columns">
-                                            <div class="dark"> </div>
-                                            <input class="input-top" type="text" placeholder="search">
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>-->
-
+                       
                             <ul class="right">
                                 <li class=" has-dropdown bg-white">
                                     <a class="bg-white" href="#"><span class="admin-pic-text text-gray">Hi, {{{$user->name}}} </span>
@@ -199,14 +140,8 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <i class="icon-folder-open"></i>
-                                            <a href="#">
-                                                <h4>Account<span class="text-blue fontello-record" ></span></h4>
-                                            </a>
-                                        </li>
-                                        <li>
                                             
-                                            <a href="{{ action("AuthController@logout") }}">
+                                            <a href="http://localhost:8000/auth/logout">
                                                 <h4>Logout<span class="text-dark-blue fontello-record" ></span></h4>
                                             </a>
                                         </li>

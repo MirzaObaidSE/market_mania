@@ -10,17 +10,20 @@
 
                                     <span class="box-btn" data-widget="collapse"><i class="icon-minus"></i>
                                     </span>
-                                    <span align="right"> <a href="{{route('edit_by_user', ['id' => $user->id])}}" class="button success tiny round">Edit </a>
+                                    <span class="box-btn" data-widget="remove"><i class="icon-cross"></i>
                                     </span>
+                                    <!---->
                                 </div>
                                 <h3 class="box-title"><i class="icon-menu"></i>
-                                    <span>User Basic Info</span>
+                                    <span>Company Info</span>
 
                                 </h3>
+
                             </div>
                             <!-- /.box-header -->
                             <div class="box-body " style="display: block;">
-
+                                <span align="right"> <a href="{{route('edit_by_user', ['id' => $user->id])}}" class="button ">Edit </a>
+                                    </span>
                                 <table style="width:100%;">
 
                                     <tbody>
@@ -44,6 +47,7 @@
                             <!-- end .timeline -->
                         </div>
                         <!-- box -->
+                       
                     </div>
                 </div>   
  @endsection

@@ -168,7 +168,7 @@
                                         
                                         <li>
                                             <i class="icon-upload"></i>
-                                            <a href="{{ action("AuthController@logout") }}">
+                                            <a href="http://localhost:8000/auth/logout">
                                                 <h4>Logout<span class="text-dark-blue fontello-record" ></span></h4>
                                             </a>
                                         </li>
