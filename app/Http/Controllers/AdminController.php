@@ -50,7 +50,18 @@ class AdminController extends Controller
     }
     public function Dashboard(){
 
-        return View('admin.index');
+        $total=User::count();
+        $contact=Contact::count();
+        $platinum = User::where('stripe_plan', 'platinum-plan')->count();
+        $pincome=$platinum * 20;
+        $facebook = User::where('stripe_plan', 'facebook-monthly')->count();
+        $fincome=$facebook * 10;
+        //var_dump($fincome);
+        $twitter = User::where('stripe_plan', 'twitter-monthly')->count();
+        $tincome=$twitter * 8;
+        $total_r=$pincome + $tincome + $fincome ;
+        //var_dump($platinum);die();
+        return View('admin.index',compact('total','total_r','fincome','pincome','tincome', 'contact','platinum','facebook','twitter'));
     }
 
     public function edit($id)

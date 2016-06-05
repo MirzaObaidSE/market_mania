@@ -31,7 +31,18 @@ class UserController extends Controller
     public function index()
     {
         //
-        return View('user.index');
+
+        $current = Auth::User();
+        $user = User::find($current->id);
+        $allcontact=$user->contact()->count();
+        $twitter = $user->contact->where('network', 'twitter')->count();
+        $facebook = $user->contact->where('network', 'facebook')->count();
+       /* if($facebook==0){
+            $facebook="U need Search from Facebook";
+            return View('user.index',compact('allcontact','twitter','facebook'));
+        }*/
+        //echo $twitter;die();
+        return View('user.index',compact('allcontact','twitter','facebook'));
     }
     public function showprofile(){
         $user = Auth::User();       
@@ -204,14 +215,13 @@ class UserController extends Controller
         // output headers so that the file is downloaded rather than displayed
         header('Content-Type: text/csv; charset=utf-8');
         header('Content-Disposition: attachment; filename=data.csv');
-
         // create a file pointer connected to the output stream
         $output = fopen('php://output', 'w');
-
         // output the column headings
         fputcsv($output, array('Network', 'Name', 'Screen Name'));
-
-        $allcontact=Contact::all();
+        $current = Auth::User();
+        $user = User::find($current->id);
+        $allcontact=$user->contact()->get();
         foreach($allcontact as $key => $value) {
             $row = array(
                 'network' => $value['network'],

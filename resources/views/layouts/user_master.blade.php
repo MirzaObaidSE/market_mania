@@ -97,8 +97,6 @@
                         </div>
                         <!-- end of Menu sidebar  -->
                         <ul class="bottom-list-menu">
-                            <li>Settings <span class="icon-gear"></span>
-                            </li>
                             <li>Help <span class="icon-phone"></span>
                             </li>
                             <li>About Market Mania <span class="icon-music"></span>

@@ -27,6 +27,9 @@
                                 <h3 class="box-title"><i class="icon-menu"></i>
                                     <span>Saved Contect</span>
                                 </h3>
+                                 <div class="down bg-green large-2 large-offset-9 columns" >
+                                    <a href="{!! route('downloadcsv') !!}">Download in CSV</a>
+                                </div>
                             </div>
                             
                             <div class="box-body " style="display: block;">
