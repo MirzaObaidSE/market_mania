@@ -62,7 +62,7 @@
                         <div class="side-bar">
                             <ul id="menu-showhide" class="topnav slicknav">
                                 <li>
-                                    <a id="menu-select" class="tooltip-tip" href="index.html" title="Dashboard">
+                                    <a id="menu-select" class="tooltip-tip" href="{{ action("UserController@index") }}" title="Dashboard">
                                         <i class="icon-monitor"></i>
                                         <span>Dashboard</span>
 

@@ -22,7 +22,8 @@ Route::get('home', function () {
 	else{
 
         if(Auth::user()->type == 'admin'){
-           return View('admin.index');
+           return Redirect::to('admin/home');
+           //return View('admin.index');
         } else {
             if(Auth::user()->subscribed()) {
                 return Redirect::to('customer/user_home');    

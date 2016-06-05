@@ -885,3 +885,10 @@ ALERT
 .payment-errors{
     color:red;
 }
+.down{
+    height: 30px;
+    margin-top: 40px;
+    border-radius: 10px;
+    text-align: center;
+    
+}

@@ -10,8 +10,7 @@
                 {!!Form::close()!!}
         </div>
      
- 		<div class="row">
-
+                <div class="row">
                     <div class="large-12 columns">
                         <div class="box">
                             <div class="box-header bg-transparent">
@@ -24,7 +23,7 @@
                                     </span>
                                 </div>
                                 <h3 class="box-title"><i class="icon-menu"></i>
-                                    <span>BASIC</span>
+                                    <span>All User List</span>
                                 </h3>
                             </div>
                             <!-- /.box-header -->
@@ -58,18 +57,11 @@
 									        @endforeach
                                     </tbody>
                                 </table>
-
-
-
                             </div>
                             <!-- end .timeline -->
-
-
                         </div>
                         <!-- box -->
                     </div>
-
-
                 </div>   
     
     	

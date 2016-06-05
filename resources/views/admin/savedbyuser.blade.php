@@ -10,7 +10,7 @@
                 {!!Form::close()!!}
        	</div>
  		<div class="row">
-            <div class="large-12 columns">
+            <div class="large-12 medium-6 small-6 columns">
             	<div class="box">
                     <div class="box-header bg-transparent">
                          <!-- tools box -->
@@ -22,9 +22,12 @@
                             </span>
                         </div>
                         <h3 class="box-title"><i class="icon-menu"></i>
-                            <span>BASIC</span>
-                            <span><a href="{!! route('downloadcsv') !!}">Download in CSV</a></span>
+                            <span>Contact Searched By Users</span>
                         </h3>
+                            <div class="down bg-green large-2 large-offset-9 columns" >
+                            <a href="{!! route('downloadcsv') !!}">Download in CSV</a>
+                            </div>
+                        
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body " style="display: block;">
@@ -37,10 +40,11 @@
 								    <th> Screen Name </th>
 								    <th> image </th>
                                     
-                                </tr>        
+                                </tr> 
+                                @foreach($allcontact as $contact)       
 						        <tr class="text-right">
 
-									@foreach($allcontact as $contact)					
+														
 									  	<td> {{{ $contact->network_id }}} </td>
 									 	<td> {{{ $contact->network  }}} </td>
 									 	<td> {{{ $contact->name  }}} </td>
@@ -52,13 +56,10 @@
                                         		<img src="{{asset('img/empty_person.jpg')}}" /> 
                                         	@endif
                                         </td>  
-                                    </tr>
+                                </tr>
 									@endforeach
                             </tbody>
                         </table>
-
-
-
                     </div>
                     <!-- end .timeline -->
                 </div>

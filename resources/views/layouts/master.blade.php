@@ -62,7 +62,7 @@
                         <div class="side-bar">
                             <ul id="menu-showhide" class="topnav slicknav">
                                 <li>
-                                    <a id="menu-select" class="tooltip-tip" href="index.html" title="Dashboard">
+                                    <a id="menu-select" class="tooltip-tip" href="{{ action("AdminController@Dashboard") }}" title="Dashboard">
                                         <i class="icon-monitor"></i>
                                         <span>Dashboard</span>
 
@@ -93,38 +93,11 @@
                                     </a>
                                     
                                 </li>                                                              
-                                <li>
-                                    <a class="tooltip-tip" href="#" title="Extra">
-                                        <i class="fontello-beaker"></i>
-                                        <span>Extra</span>
-                                    </a>
-                                    <ul>
-                                        <li>
-                                            <a href="invoice.html" title="Invoice">Invoice</a>
-                                        </li>
-                                        <li>
-                                            <a href="pricing_table.html" title="Pricing Table">Pricing Table</a>
-                                        </li>
-                                        
-                                        <li>
-                                            <a href="login.html" title="Chart">Login</a>
-                                        </li>
-                                        
-                                        <li>
-                                            <a href="404.html" title="404 Error Page">404 Error Page</a>
-                                        </li>
-                                        <li>
-                                            <a href="500.html" title="500 Error Page">500 Error Page</a>
-                                        </li>
-
-                                    </ul>
-                                </li>
+                                
                             </ul>
                         </div>
                         <!-- end of Menu sidebar  -->
                         <ul class="bottom-list-menu">
-                            <li>Settings <span class="icon-gear"></span>
-                            </li>
                             <li>Help <span class="icon-phone"></span>
                             </li>
                             <li>About Market Mania <span class="icon-music"></span>
@@ -158,13 +131,6 @@
                                     </a>
 
                                     <ul class="dropdown dropdown-nest profile-dropdown">
-
-                                        <li>
-                                            <i class="icon-user"></i>
-                                            <a href="#">
-                                                <h4>Profile<span class="text-aqua fontello-record" ></span></h4>
-                                            </a>
-                                        </li>
                                         
                                         <li>
                                             <i class="icon-upload"></i>
@@ -189,12 +155,7 @@
                     </li>
                     <li>Dashboard
                     </li>
-                    <!--   <ul class="right inline-list">
-                        <li>Help Center</a>
-                        </li>
-                        <li>Mail Support
-                        </li>
-                    </ul> -->
+                   
                 </ul>
                 <!-- end of breadcrumbs -->
 
@@ -287,7 +248,7 @@
          */
         //LINE randomly generated data
 
-        var line_data1 = [
+       /* var line_data1 = [
             [1, 800],
             [2, 1500],
             [3, 900],

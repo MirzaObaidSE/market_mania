@@ -4,9 +4,6 @@
                         <hr>
                         <br>
                         <div class="row">
-                            <!-- SIDEMENU MAIL -->
-
-                            <!-- CONTENT MAIL -->
                             <div class="medium-4 columns">
                                 <ul class="pricing-table">
                                     <li class="title" style="background:#92CD18">
