@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/typicons.css')}}"/>
     <link rel="stylesheet" type="text/css" href="{{asset('css/font-awesome.css')}}"/>
     <link rel="stylesheet" type="text/css" href="{{asset('css/theme.css')}}"/>
+    
 
     <!-- pace loader -->
     <script src="{{asset('js/pace/pace.js')}}"></script>
@@ -97,26 +98,26 @@
                         </div>
                         <!-- end of Menu sidebar  -->
                         <ul class="bottom-list-menu">
-                            <li>Help <span class="icon-phone"></span>
-                            </li>
-                            <li>About Market Mania <span class="icon-music"></span>
-                            </li>
+                            <a href="{{ action("UserController@help") }}">
+                                <li>Help 
+                                    <span class="icon-phone"></span>      
+                                </li>
+                            </a>
+                            <a href="{{ action("UserController@about") }}">
+                                <li>About Market Mania <span class="icon-music"></span>
+                                </li>
+                            </a>
 
                         </ul>
                     </div>
                 </div>
             </div>
             <!-- end of Rightsidemenu -->
-
-
-
             <div class="wrap-fluid" id="paper-bg">
                 <!-- top nav -->
                 <div class="top-bar-nest">
                     <nav class="top-bar" data-topbar role="navigation" data-options="is_hover: false">
                         <ul class="title-area left">
-
-
                             <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
                             <li class="toggle-topbar menu-icon"><a href="#"><span></span></a>
                             </li>
@@ -126,7 +127,7 @@
                        
                             <ul class="right">
                                 <li class=" has-dropdown bg-white">
-                                    <a class="bg-white" href="#"><span class="admin-pic-text text-gray">Hi, {{{$user->name}}} </span>
+                                    <a class="bg-white" href="#"><span class="admin-pic-text text-gray">Welcome, {{{$user->name}}} </span>
                                     </a>
 
                                     <ul class="dropdown dropdown-nest profile-dropdown">
@@ -142,13 +143,7 @@
                                             <a href="http://localhost:8000/auth/logout">
                                                 <h4>Logout<span class="text-dark-blue fontello-record" ></span></h4>
                                             </a>
-                                        </li>
-
-                                        <!--<li class="active right">
-                                            <a href="#">
-                                                <div class="label bg-white">More</div>
-                                            </a> -->
-                                        </li>
+                                        </li>                                    
                                     </ul>
                                 </li>
                 
@@ -157,52 +152,26 @@
                     </nav>
                 </div>
                 <!-- end of top nav -->
-
                 <!-- breadcrumbs -->
-                <ul class="breadcrumbs">
-                    <li><a href="#"><span class="entypo-home"></span></a>
-                    </li>
-                    <li>Dashboard
-                    </li>
-                </ul>
+                
                 <!-- end of breadcrumbs -->
 
-
-
                 @yield('content')
-
-
 
                 <footer>
                     <div id="footer">Copyright &copy; 2016 <a href="">Market Mania</a> Made with <i class="fontello-heart-1 text-green"></i></div>
 
                 </footer>
             </div>
-
-            <!-- End of Container Begin -->
-
-
-
-
-
-
-
-
-           
-         
+            <!-- End of Container Begin -->         
             <!-- close the off-canvas menu -->
             <a class="exit-off-canvas"></a>
             <!-- End of Right Menu -->
         </div>
         <!-- end paper bg -->
-
     </div>
     <!-- end of off-canvas-wrap -->
-
     <!-- end of inner-wrap -->
-
-
-
     <!-- main javascript library -->
 
     <script type='text/javascript' src="{{asset('js/jquery.js')}}"></script>
@@ -227,14 +196,6 @@
     <script type='text/javascript' src="{{asset('js/number-progress-bar/number-pb.js') }}"></script>
     <script type='text/javascript' src="{{asset('js/loader/loader.js') }}"></script>
     <script type='text/javascript' src="{{asset('js/loader/demo.js') }}"></script>
-    <!-- FLOT CHARTS -->
-    <!--<script src="{{asset('js/flot/jquery.flot.js')}}" type="text/javascript"></script>
-    <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
-    <!--<script src="{{asset('js/flot/jquery.flot.resize.min.js')}}" type="text/javascript"></script>
-    <!-- FLOT PIE PLUGIN - also used to draw donut charts -->
-    <<!--<script src="{{asset('js/flot/jquery.flot.pie.min.js')}}" type="text/javascript"></script>
-    <!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
-    <!--<script src="{{asset('js/flot/jquery.flot.categories.min.js')}}" type="text/javascript"></script>-->
     <script type="text/javascript" src="{{asset('js/skycons/skycons.js')}}"></script>
 
     @yield('script')
@@ -318,35 +279,6 @@
             [20, 959]
 
         ];
-
-
-        /*$.plot("#line-chart", [line_data1, line_data2], {
-            grid: {
-                hoverable: true,
-                borderColor: "#E2E6EE",
-                borderWidth: 1,
-                tickColor: "#E2E6EE"
-            },
-            series: {   
-                shadowSize: 0,
-                lines: {
-                    show: true
-                },
-                points: {
-                    show: true
-                }
-            },
-            colors: ["#333333", "#cccccc"],
-            lines: {
-                fill: true,
-            },
-            yaxis: {
-                show: false,
-            },
-            xaxis: {
-                show: true
-            }
-        });*/
         //Initialize tooltip on hover
         $("<div class='tooltip-inner' id='line-chart-tooltip'></div>").css({
             position: "absolute",
@@ -399,26 +331,7 @@
             [18, 169.5],
             [19, 168.0]
         ];
-        /*$.plot("#area-chart", [areaData], {
-            grid: {
-                borderWidth: 0
-            },
-            series: {
-                shadowSize: 0, // Drawing is faster without shadows
-                color: "#00c0ef"
-            },
-            lines: {
-                fill: true //Converts the line chart to area chart                        
-            },
-            yaxis: {
-                show: false
-            },
-            xaxis: {
-                show: false
-            }
-        });*/
 
-        /* END AREA CHART */
 
     });
 

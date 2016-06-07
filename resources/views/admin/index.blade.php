@@ -19,7 +19,7 @@
                                 <h3 class="box-title"><i class="fontello-chart-bar-outline"></i>
                                     <span>STATS</span>
                                 </h3>
-                                </div>
+                            </div>
                             <div style="margin:15px 0 0" class="box-body" style="display: block;">
 
                                 <div class="stats-wrap">

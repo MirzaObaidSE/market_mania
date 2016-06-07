@@ -119,6 +119,7 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function(
         'uses' => 'AdminController@AdminDownloadCsv'
     ]);
 
+
 });
 
 
@@ -168,6 +169,14 @@ Route::group(['middleware' => ['auth', 'customer'], 'prefix' => 'customer'], fun
     Route::get('downloadcsv',[
         'as' => 'downloadcsv',
         'uses' => 'UserController@downloadCsv'
+    ]);
+     Route::get('help',[
+        'as'=> 'help',
+        'uses' => 'UserController@help'
+    ]);
+      Route::get('about',[
+        'as' => 'about',
+        'uses' => 'UserController@about'
     ]);
 
 

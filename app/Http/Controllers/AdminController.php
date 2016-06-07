@@ -97,4 +97,27 @@ class AdminController extends Controller
         return View('admin.savedbyuser',compact('allcontact'));
           
     }
+     public function AdminDownloadCsv() {
+        // output headers so that the file is downloaded rather than displayed
+        header('Content-Type: text/csv; charset=utf-8');
+        header('Content-Disposition: attachment; filename=data.csv');
+
+        // create a file pointer connected to the output stream
+        $output = fopen('php://output', 'w');
+
+        // output the column headings
+        fputcsv($output, array('Network', 'Name', 'Screen Name'));
+
+        $allcontact=Contact::all();
+        foreach($allcontact as $key => $value) {
+            $row = array(
+                'network' => $value['network'],
+                'name'  => $value['name'],
+                'screen_name'   => $value['screen_name']
+            );
+            fputcsv($output, $row);
+        }
+        die;
+        
+    }
 }

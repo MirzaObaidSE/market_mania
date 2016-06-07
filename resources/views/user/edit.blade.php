@@ -1,6 +1,5 @@
 @extends('layouts.user_master')
 @section('content')
-
      <div class="box-body " style="display: block;">
                         <div class="row">
 
@@ -85,10 +84,6 @@
                 },
                 name:{
                     required:true
-                },
-                website:{
-                    required:true,
-                    url: true
                 },
             },
 

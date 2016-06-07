@@ -1,62 +1,68 @@
 @extends('layouts.user_master')
 @section('content')
+                <ul class="breadcrumbs">
+                    <li><a href="{{ action("UserController@index") }}"><span class="entypo-home"></span></a>
+                    </li>
+                    <li>Dashboard
+                    </li>
+                </ul>
                 <div>
  					<div class="large-12 columns">
                         <hr>
                         <br>
                         <div class="row">
                             <div class="medium-6 columns">
-                        <div class="box">
-                            <!-- /.box-header -->
-                            <div class="box-header no-pad bg-transparent">                                
+                                <div class="box">
+                                <!-- /.box-header -->
+                                    <div class="box-header no-pad bg-transparent">                                
                                 <!-- tools box -->
-                                <div class="pull-right box-tools">
+                                        <div class="pull-right box-tools">
 
-                                    <span class="box-btn" data-widget="collapse"><i class="icon-minus"></i>
-                                    </span>
-                                    <span class="box-btn" data-widget="remove"><i class="icon-cross"></i>
-                                    </span>
-                                </div>
-                                <h3 class="box-title"><i class="fontello-chart-bar-outline"></i>
-                                    <span>STATS</span>
-                                </h3>
-                                </div>
-                            <div style="margin:15px 0 0" class="box-body" style="display: block;">
+                                            <span class="box-btn" data-widget="collapse"><i class="icon-minus"></i>
+                                            </span>
+                                            <span class="box-btn" data-widget="remove"><i class="icon-cross"></i>
+                                            </span>
+                                        </div>
+                                        <h3 class="box-title"><i class="fontello-chart-bar-outline"></i>
+                                            <span>STATS</span>
+                                        </h3>
+                                    </div>
+                                    <div style="margin:15px 0 0" class="box-body" style="display: block;">
 
-                                <div class="stats-wrap">
-                                <ul  style="list-style:none;">
+                                        <div class="stats-wrap">
+                                            <ul  style="list-style:none;">
                                     
-                                    <li>
-                                        <h2><b class="counter-up" style="color:#888;">{{ $allcontact }}</b> </h2>
-                                        <p>Total Contact Searched 
-                                        </p>
-                                    </li>
-                                    <li>
-                                        @if($twitter==0)
-                                        <h2><b class="" style="color:#888;"></b></h2><h5> Nothing from Twitter </h5>
-                                        @else
-                                        <h2><b class="counter-up" style="color:#888;">{{ $twitter }}</b> </h2>
-                                        @endif
-                                        <p>Contact Searched from Twitter 
-                                        </p>
-                                    </li>
-                                    <li>
-                                        @if($facebook==0)
-                                        <h2><b class="" style="color:#888;"></b></h2><h5> Nothing from Facebook </h5>
-                                        @else
-                                        <h2><b class="counter-up" style="color:#888;">{{ $facebook }}</b> </h2>
-                                        @endif
-                                        <p>Contact Searched from Facebook 
-                                        </p>
-                                    </li>
+                                                <li>
+                                                    <h2><b class="counter-up" style="color:#888;">{{ $allcontact }}</b> </h2>
+                                                    <p>Total Contact Searched 
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    @if($twitter==0)
+                                                        <h2><b class="" style="color:#888;"></b></h2><h5> Nothing from Twitter </h5>
+                                                    @else
+                                                        <h2><b class="counter-up" style="color:#888;">{{ $twitter }}</b> </h2>
+                                                    @endif
+                                                    <p>Contact Searched from Twitter 
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    @if($facebook==0)
+                                                        <h2><b class="" style="color:#888;"></b></h2><h5> Nothing from Facebook </h5>
+                                                    @else
+                                                        <h2><b class="counter-up" style="color:#888;">{{ $facebook }}</b> </h2>
+                                                    @endif
+                                                    <p>Contact Searched from Facebook 
+                                                    </p>
+                                                </li>
                                     
-                                </ul>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                <!-- /.box-body -->
                                 </div>
+                            <!-- /.box -->
                             </div>
-                            <!-- /.box-body -->
-                        </div>
-                        <!-- /.box -->
-                    </div>
                             <div class="medium-6 columns">
 
                                 <ul class="pricing-table">
@@ -149,7 +155,7 @@
                                             <th> Email </th> <td> {{{ $user->email }}} </td>
                                         </tr>
                                         <tr>
-                                            <th> Phone Number </th> <td> {{{ $user->email }}} </td>
+                                            <th> Phone Number </th> <td> {{{ $user->phone_no }}} </td>
                                         </tr>
                                         <tr>
                                             <th> Website </th> <td> {{{ $user->website }}} </td>

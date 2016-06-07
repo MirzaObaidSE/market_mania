@@ -892,3 +892,7 @@ ALERT
     text-align: center;
     
 }
+.circular {
+    border-radius: 50%;
+    
+    }

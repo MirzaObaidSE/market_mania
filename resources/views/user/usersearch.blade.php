@@ -1,5 +1,11 @@
 @extends('layouts.user_master')
 @section('content')
+    <ul class="breadcrumbs">
+        <li><a href=""{{ action("UserController@search") }}""><span class="entypo-search"></span></a>
+        </li>
+        <li> User Search
+        </li>                   
+        </ul>
     <Form id="searchForm" action="" method="get"> 
 	   {!! csrf_field() !!}
 

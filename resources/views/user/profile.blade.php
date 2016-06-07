@@ -1,6 +1,12 @@
 @extends('layouts.user_master')
 @section('content')
-	<div class="row">
+                <ul class="breadcrumbs">
+                    <li><a href=""{{ action("UserController@showprofile") }}""><span class="entypo-user"></span></a>
+                    </li>
+                    <li> Profile
+                    </li>                   
+                </ul>
+	           <div class="row">
 
                     <div class="large-12 columns">
                         <div class="box">
@@ -34,7 +40,7 @@
 										    <th> Email </th> <td> {{{ $user->email }}} </td>
 										</tr>
 										<tr>
-										    <th> Phone Number </th> <td> {{{ $user->email }}} </td>
+										    <th> Phone Number </th> <td> {{{ $user->phone_no }}} </td>
 										</tr>
 										<tr>
 										    <th> Website </th> <td> {{{ $user->website }}} </td>

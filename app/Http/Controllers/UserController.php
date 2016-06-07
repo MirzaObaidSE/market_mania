@@ -37,11 +37,6 @@ class UserController extends Controller
         $allcontact=$user->contact()->count();
         $twitter = $user->contact->where('network', 'twitter')->count();
         $facebook = $user->contact->where('network', 'facebook')->count();
-       /* if($facebook==0){
-            $facebook="U need Search from Facebook";
-            return View('user.index',compact('allcontact','twitter','facebook'));
-        }*/
-        //echo $twitter;die();
         return View('user.index',compact('allcontact','twitter','facebook'));
     }
     public function showprofile(){
@@ -232,5 +227,11 @@ class UserController extends Controller
         }
         die;
         
+    }
+    public function help(){
+        return View('user.help');
+    }
+    public function about(){
+        return View('user.about');
     }
 }
