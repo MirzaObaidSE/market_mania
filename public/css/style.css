@@ -893,6 +893,8 @@ ALERT
     
 }
 .circular {
-    border-radius: 50%;
+    border-radius: 40%;
+    width:200px;
+    height:200px;
     
     }
