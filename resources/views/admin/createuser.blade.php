@@ -1,7 +1,12 @@
 @extends('layouts.master')
 @section('content')
 
-
+    <ul class="breadcrumbs">
+        <li><a href="{{ action("AdminController@store") }}"><span class="fontello-user-add-outline"></span></a>
+        </li>
+        <li> Profile
+        </li>                   
+    </ul>
 
      <div class="box-body " style="display: block;">
                         <div class="row">

@@ -1,4 +1,4 @@
-@extends('layouts.user_master')
+@extends('layouts.master')
 @section('content')
 				<ul class="breadcrumbs">
                     <li><a href="#"><span class="entypo-about"></span></a>

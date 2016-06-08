@@ -1,6 +1,11 @@
 @extends('layouts.master')
 @section('content')
-     
+        <ul class="breadcrumbs">
+            <li><a href="{{ action("AdminController@getuserlist") }}"><span class="entypo-user"></span></a>
+            </li>
+            <li> User List
+            </li>                   
+        </ul>
         <div>
             <Form action="" method="get" id="alluserForm"> 
                 <div class="large-3 columns">
@@ -51,7 +56,7 @@
 									           <td> {{{ $user->email }}} </td>
 									           <td> {{{ $user->phone_no }}} </td>
 									           <td> {{{ $user->website }}} </td>
-                                               <td> <a href="{{route('edit_user', ['id' => $user->id])}}" class="button success tiny round">Edit </a>|<a href="{{route('delete_user', ['id' => $user->id])}}"class="button alert tiny round" >  Delete </a> </td>
+                                               <td> <a href="{{route('edit_user', ['id' => $user->id ])}}" class="button success tiny round">Edit </a>|<a href="{{route('delete_user', ['id' => $user->id])}}"class="button alert tiny round" >  Delete </a> </td>
 								                    
 									    </tr>
 									        @endforeach

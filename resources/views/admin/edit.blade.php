@@ -3,14 +3,14 @@
 
 
 
-     <div class="box-body " style="display: block;">
+                    <div class="box-body " style="display: block;">
                         <div class="row">
-
                             <div class="large-8 columns">
                                 <div class="row">
                                     <div class="edumix-signup-panel">
                                         <p class="welcome"> Welcome to this awesome app!</p>
-                                      {!! Form::model($user, array('route' => array('update_user', $user->id))) !!}
+                                       
+                                      {!! Form::model($users, array('route' => array('update_user', $users->id),'id'=> 'editForm')) !!}
                                             {!! csrf_field() !!}
                                             <div class="row collapse">
                                                 <div class="small-5  columns">
@@ -72,4 +72,5 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
 @endsection

@@ -7,7 +7,7 @@
                                 <div class="row">
                                     <div class="edumix-signup-panel">
                                         <p class="welcome"> Welcome to this awesome app!</p>
-                                      {!! Form::model($user, array('route' => array('update_by_user', $user->id),'id' => 'editForm')) !!}
+                                      {!! Form::model($user, array('route' => array('update_user', $user->id))) !!}
                                             {!! csrf_field() !!}
                                             <div class="row collapse">
                                                 <div class="small-5  columns">

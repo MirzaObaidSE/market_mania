@@ -1,7 +1,7 @@
 @extends('layouts.user_master')
 @section('content')
                 <ul class="breadcrumbs">
-                    <li><a href=""{{ action("UserController@showprofile") }}""><span class="entypo-user"></span></a>
+                    <li><a href="{{ action("UserController@showprofile") }}"><span class="entypo-user"></span></a>
                     </li>
                     <li> Profile
                     </li>                   
@@ -28,7 +28,7 @@
                             </div>
                             <!-- /.box-header -->
                             <div class="box-body " style="display: block;">
-                                <span align="right"> <a href="{{route('edit_by_user', ['id' => $user->id])}}" class="button ">Edit </a>
+                                <span align="right"> <a href="{{route('edit_by_user', ['id' => $user->id])}}" class="button bg-green">Edit </a>
                                     </span>
                                 <table style="width:100%;">
 

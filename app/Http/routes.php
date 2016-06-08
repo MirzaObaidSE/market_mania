@@ -118,6 +118,14 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function(
         'as' => 'Adownloadcsv',
         'uses' => 'AdminController@AdminDownloadCsv'
     ]);
+     Route::get('help',[
+        'as'=> 'help',
+        'uses' => 'AdminController@help'
+    ]);
+      Route::get('about',[
+        'as' => 'about',
+        'uses' => 'AdminController@about'
+    ]);
 
 
 });

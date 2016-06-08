@@ -98,10 +98,14 @@
                         </div>
                         <!-- end of Menu sidebar  -->
                         <ul class="bottom-list-menu">
-                            <li>Help <span class="icon-phone"></span>
-                            </li>
-                            <li>About Market Mania <span class="icon-music"></span>
-                            </li>
+                            <a href="{{ action("AdminController@help") }}">
+                                <li>Help <span class="icon-phone"></span>
+                                </li>
+                            </a>
+                            <a href="{{ action("AdminController@about") }}">
+                                <li>About Market Mania <span class="icon-music"></span>
+                                </li>
+                            </a>
 
                         </ul>
                     </div>
@@ -149,15 +153,8 @@
                 </div>
                 <!-- end of top nav -->
 
-                <!-- breadcrumbs -->
-                <ul class="breadcrumbs">
-                    <li><a href="#"><span class="entypo-home"></span></a>
-                    </li>
-                    <li>Dashboard
-                    </li>
-                   
-                </ul>
-                <!-- end of breadcrumbs -->
+
+               
 
 
 

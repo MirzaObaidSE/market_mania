@@ -1,7 +1,12 @@
 
 @extends('layouts.master')
 @section('content')
-
+    <ul class="breadcrumbs">
+        <li><a href="{{ action("AdminController@Dashboard") }}"><span class="entypo-home"></span></a>
+        </li>
+        <li>Dashboard
+        </li>
+    </ul>
                 <!-- Container Begin -->
                 <div class="row" style="margin-top:-20px">                    
                     <div class="large-6 columns">
