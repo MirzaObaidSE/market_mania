@@ -64,26 +64,27 @@ class AdminController extends Controller
         return View('admin.index',compact('total','total_r','fincome','pincome','tincome', 'contact','platinum','facebook','twitter'));
     }
 
-    public function edit($id)
+       public function edit($id)
     {
-        $user=User::find($id);
-        if(!$user) {
+        //die(User::find($id));
+        $users=User::find($id);
+        if(!$users) {
             die("No User Found");
         }
-        return View('admin.edit',compact('user'));
+        return View('admin.edit',compact('users'));
     }
-
     public function update(Request $request, $id)
     {
+
         $user = User::find($id);
+
         $user->name=$request->name;
         $user->email=$request->email;
-        $user->password=$request->password;
+        $user->password=bcrypt($request['password']);
         $user->phone_no=$request->phone_no;
         $user->website=$request->website;
         $user->save();
         return Redirect()->route('alluser');
-
         
     }
     public function delete($id)
@@ -119,5 +120,11 @@ class AdminController extends Controller
         }
         die;
         
+    }
+     public function help(){
+        return View('admin.help');
+    }
+    public function about(){
+        return View('admin.about');
     }
 }
