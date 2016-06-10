@@ -6,7 +6,7 @@
                     <li>Help
                     </li>                   
                 </ul>
-
+                 <h1 class="bg-green large-2 columns"> FAQ </h1>
         <div class="row" style="margin-top:-20px">                    
             <div class="large-12 columns">
                 <div class="box">
@@ -19,6 +19,7 @@
                             <span class="box-btn" data-widget="remove"><i class="icon-cross"></i>
                             </span>
                         </div>
+
                         <h3 class="box-title">Question
                             <p>
                             <b>1. Can i change My Subcriberd Package?</b></br>

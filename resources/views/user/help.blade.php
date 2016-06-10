@@ -6,7 +6,7 @@
                     <li>Help
                     </li>                   
                 </ul>
-
+    <h1 class="bg-green large-2 columns"> FAQ </h1>
 		<div class="row" style="margin-top:-20px">                    
             <div class="large-12 columns">
                 <div class="box">

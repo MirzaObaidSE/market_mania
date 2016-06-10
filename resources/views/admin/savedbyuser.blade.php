@@ -7,14 +7,14 @@
         </li>                   
     </ul>
 	<h3> Saved Contacts By Users </h3>
-		<div>
+		<!--<div>
             <Form action="" method="get" id="savedbyuser"> 
                 <div class="large-3 columns">
                     {!! Form::text('search',null,array('placeholder'=> 'Find By Name,network')) !!} 
                 </div>   
                  <button class="bg-green small-2 radius right columns" type="submit"><span> Search </span></button>
                 {!!Form::close()!!}
-       	</div>
+       	</div>-->
  		<div class="row">
             <div class="large-12 medium-6 small-6 columns">
             	<div class="box">

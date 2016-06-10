@@ -216,7 +216,9 @@ class UserController extends Controller
         fputcsv($output, array('Network', 'Name', 'Screen Name'));
         $current = Auth::User();
         $user = User::find($current->id);
+        //die($user->contact()->get());
         $allcontact=$user->contact()->get();
+
         foreach($allcontact as $key => $value) {
             $row = array(
                 'network' => $value['network'],
